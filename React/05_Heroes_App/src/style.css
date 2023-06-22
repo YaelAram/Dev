@@ -1,0 +1,145 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* NavBar Styles */
+h1, li, .logout-button{
+    line-height: 1.5;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+.active{
+    color: white;
+    font-weight: bold;
+}
+
+nav{
+    background-color: black;
+    padding: 1.2rem 1.5rem;
+}
+
+ul{
+    font-size: large;
+    margin-block: 0;
+    text-align: end;
+    padding-inline-start: 0;
+}
+
+li{
+    display: inline;
+    list-style: none;
+    margin-left: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: cornsilk;
+}
+
+.logout-button{
+    padding: 0;
+    border-width: 0;
+    background-color: black;
+    color: cornsilk;
+}
+
+.logout-button:hover{
+    cursor: pointer;
+}
+
+/*Page Style*/
+section{
+    padding: 0.25rem 3rem 2rem;
+}
+
+.hero-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.hero-item{
+    padding: 0.25rem 1.5rem 1rem;
+    border-radius: 0.75rem;
+    border: 0.125rem solid black;
+}
+
+.image-info{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.25rem;
+}
+
+img{
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+
+.hero-img{
+    height: 500px;
+}
+
+.hero-info{
+    grid-row: 1;
+    grid-column: 2;
+    padding-left: 1.5rem;
+}
+
+.label-hero-info{
+    font-weight: bolder;
+}
+
+.about-hero-info{
+    font-weight: bold;
+    color: black;
+}
+
+.primary-button{
+    font-size: large;
+    padding: 0.5rem 3rem;
+    background-color: white;
+    color: black;
+    outline: none;
+}
+
+.primary-button, .input-text{
+    border: 0.125rem solid black;
+    border-radius: 0.75rem;
+}
+
+.primary-button:hover{
+    background-color: black;
+    color: white;
+}
+
+/* SearchBar */
+form{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.input-text{
+    padding-left: 0.75rem;
+}
+
+.input-text:focus{
+    font-weight: bolder;
+}
+
+/* Alert */
+.alert{
+    padding: 1rem 0.75rem;
+    border: 0.1rem solid darkred;
+    border-radius: 0.75rem;
+    color: darkred;
+    background-color: #FAD4D4;
+}
+
+.alert-message{
+    margin-block: 0;
+}

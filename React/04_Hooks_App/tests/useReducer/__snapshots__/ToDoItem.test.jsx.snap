@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToDoItem component Match snapshot 1`] = `
+<div>
+  <li>
+    <input
+      type="checkbox"
+    />
+    <span
+      class=""
+      data-testid="title-to-do"
+    >
+      Hello World
+    </span>
+    <input
+      type="button"
+      value="Remove"
+    />
+  </li>
+</div>
+`;

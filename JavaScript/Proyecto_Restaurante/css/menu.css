@@ -1,0 +1,62 @@
+:root{
+    --primary-color: #2C702E;
+    --secondary-color: #8BC34A;
+    --accent: #DCE775;
+    --auxiliar: #FFF59D;
+    --letter: #fff;
+    --border-radious: 0.75rem 
+}
+
+main{
+    margin-top: 5rem;
+}
+
+.section{
+    margin-bottom: 3rem;
+}
+
+.section-title{
+    text-align: center;
+}
+
+/* 
+    Se crea un grid con 4 columnas por fila, cada columna contiene un card, un card contiene una imagen del producto
+    y el nombre
+*/
+.menu-grid{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+/*
+    Alineamos el contenido de la card al centro, cambiamos el fondo de cada card y redondeamos sus esquinas
+*/
+.menu-card{
+    text-align: center;
+    background-color: var(--auxiliar);
+    border-radius: var(--border-radious);
+}
+
+.img-card{
+    width: 100%;
+    height: 175px;
+}
+
+/*
+    Aplicamos un estilo de fuente y grosor diferente para indicar la cantidad del producto que se esta vendiendo,
+    se le da un estilo que visualmente resalta menos que la informacion mas relevante como el nombre y precio
+*/
+.size-card{
+    color: var(--primary-color);
+    font-weight: 700;
+    font-style: italic;
+}
+
+/*
+    Aplicamos un grosor de fuente mayor a lo normal para resaltar el precio
+*/
+.price-card{
+    color: var(--primary-color);
+    font-weight: 600;
+}

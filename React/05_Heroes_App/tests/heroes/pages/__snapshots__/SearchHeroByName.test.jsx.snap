@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchHeroByName component Should show the default page (no query params) 1`] = `
+<div>
+  <section>
+    <h1>
+      Search Hero
+    </h1>
+    <form
+      aria-label="form"
+    >
+      <input
+        class="input-text"
+        placeholder="Spider Man"
+        type="text"
+        value=""
+      />
+      <input
+        class="primary-button"
+        type="submit"
+        value="Search"
+      />
+    </form>
+  </section>
+</div>
+`;

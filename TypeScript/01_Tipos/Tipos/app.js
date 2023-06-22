@@ -1,0 +1,42 @@
+"use strict";
+const text = "Yael";
+console.log(`Hello ${text}!`);
+const age = 23;
+console.log(`${text} tiene ${age} años`);
+console.log(text.toUpperCase());
+let something = 'Hello World';
+console.log(something.toLowerCase());
+console.log(something.startsWith('Hello'));
+const numbersAndStrings = [1, 2, 3, 4, '5'];
+console.log(numbersAndStrings);
+const numbers = [1, 2, 3];
+console.log(numbers);
+console.log(numbers.reduce((prev, current) => (prev + current), 0));
+const hero = ['Iron Man', 1, true];
+console.log(hero);
+hero[0] = 'Thor';
+hero[1] = 2;
+hero[2] = false;
+console.log(hero);
+var Month;
+(function (Month) {
+    Month[Month["january"] = 0] = "january";
+    Month[Month["february"] = 1] = "february";
+    Month[Month["march"] = 2] = "march";
+})(Month || (Month = {}));
+;
+var Day;
+(function (Day) {
+    Day[Day["monday"] = 1] = "monday";
+    Day[Day["tuesday"] = 2] = "tuesday";
+    Day[Day["wednesday"] = 3] = "wednesday";
+})(Day || (Day = {}));
+;
+const currentMonth = Month.january;
+console.log(Month);
+console.log(currentMonth);
+console.log(Day);
+console.log(Day.tuesday);
+console.log(`Obtener el tipo string de un enum: ${Month[1]}`);
+console.log(`Obtener el tipo number de un enum: ${Month['january']}`);
+//# sourceMappingURL=app.js.map

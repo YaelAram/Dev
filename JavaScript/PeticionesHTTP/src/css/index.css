@@ -1,0 +1,102 @@
+body{
+    font-family: 'Urbanist', sans-serif;
+    padding: 1rem 1.5rem 5rem;
+}
+
+h1, p, input, li, select{
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+h1, .tabla-usuario, .consulta{
+    grid-column: 2 / 4;
+}
+
+h1{
+    font-size: 2.5rem;
+    grid-row: 1;
+}
+
+h1, h2, th, td{
+    text-align: center;
+}
+
+.tabla-usuario{
+    grid-row: 2;
+}
+
+table{
+    margin: 0 auto;
+}
+
+thead{
+    color: #FFF;
+    background-color: #864879;
+    font-size: 1.2rem;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #FFCDDD;
+}
+
+th, td{
+    padding: 0.6rem 1.4rem;
+}
+
+/** Consulta **/
+
+.consulta{
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+h2{
+    font-size: 2rem;
+    grid-row: 1;
+    grid-column: 2 / 4;
+}
+
+.id-consulta, .consultar{
+    grid-row: 2;
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.2rem;
+    border: 3px solid #864879;
+}
+
+.id-consulta{
+    grid-column: 2;
+}
+
+.id-consulta:focus{
+    outline: none;
+    border-color: #864879;
+}
+
+.consultar{
+    grid-column: 3;
+    font-weight: 900;
+    background-color: white;
+    color: #864879;
+}
+
+.consultar:hover{
+    background-color: #864879;
+    color: white;
+}
+
+.resultado-consulta{
+    grid-row: 3;
+    grid-column: 2 / 4;
+    text-align: center;
+    font-size: 1.2rem;
+}

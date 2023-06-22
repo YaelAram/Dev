@@ -1,0 +1,10 @@
+h1{
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    color: red;
+}
+
+body{
+    background-color: #DDD;
+}

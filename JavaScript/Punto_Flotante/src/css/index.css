@@ -1,0 +1,86 @@
+body{
+    font-family: 'Urbanist', sans-serif;
+    padding: 1rem, 1.5rem;
+}
+
+h1, p, input{
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+p, input{
+    font-size: 1.5rem;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr );
+    gap: 8px;
+}
+
+h1{
+    grid-column: 4 / 10;
+    grid-row: 1;
+    text-align: center;
+}
+
+article{
+    grid-column: 1 / 13;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr );
+    gap: 8px;
+}
+
+.aviso{
+    grid-column: 4 / 7;
+    grid-row: 1;
+}
+
+.campo{
+    grid-column: 4 / 10;
+    grid-row: 2;
+    padding: 0.25rem 0;
+    text-align: center;
+}
+
+.calcular{
+    grid-column: 4 / 7;
+    grid-row: 3;
+    background-color: #0F52BA;
+}
+
+.limpiar{
+    grid-column: 7 / 10;
+    grid-row: 3;
+    background-color: #1E6F5C;
+}
+
+.calcular, .limpiar{
+    padding: 0.4rem 0;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.calcular:hover, .limpiar:hover{
+    opacity: 0.8;
+    cursor: grab;
+}
+
+.calcular, .limpiar, .campo{
+    border-radius: 20px;
+    outline-style: none;
+}
+
+.resultado{
+    grid-column: 4 / 10;
+    grid-row: 4;
+    padding: 0.25rem 1.5rem;
+    height: 80px;
+}

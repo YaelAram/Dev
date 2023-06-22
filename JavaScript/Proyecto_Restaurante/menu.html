@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <!-- CDN para obtener los tipos de fuentes de la pagina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra Superior de Navegacion -->
+    <nav>
+        <div class="grid-container nav-container">
+            <!-- Seccion con el logo y nombre del restaurante, ademas de ser un link para regresar a index.html -->
+            <a href="./index.html" class="navbar-a nav-logo-rest">
+                <img src="./img/global/leaf-svgrepo-com.svg" alt="Logo Restaurante" class="nav-logo">
+                <p class="nav-p res-nombre">Végétalien</p>
+            </a>
+            <div class="nav-options">
+                <!-- Seccion de Links a las otras pagina de la aplicacion -->
+                <ul class="nav-ul">
+                    <li class="nav-li"><a href="./menu.html" class="navbar-a">Menu</a></li>
+                    <li class="nav-li"><a href="./promociones.html" class="navbar-a">Promociones</a></li>
+                    <li class="nav-li"><a href="./galeria.html" class="navbar-a">Galeria</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Contenido Principal de la pagina -->
+    <main>
+        <section class="section">
+            <!-- Seccion de Bebidas del Menu -->
+            <h2 class="section-title">Bebidas</h2>
+            <!-- Grid que contiene 8 tarjetas cada una con una bebida -->
+            <div class="grid-container menu-grid">
+                <!-- Cada div con la clase menu-card representa una tarjeta que muestra una bebida -->
+                <div class="menu-card">
+                    <!-- Imagen de la bebida -->
+                    <figure>
+                        <img src="./img/menu/agua-simple.jpg" alt="Agua Simple" class="img-card">
+                    </figure>
+                    <!-- Nombre de la bebida dentro del span se se indica la cantidad de la bebida -->
+                    <h3>Agua Simple <span class="size-card">1 lt</span></h3>
+                    <!-- Precio de la bebida -->
+                    <h4 class="price-card">Gratis</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-fresa.jpg" alt="Agua Fresa" class="img-card">
+                    </figure>
+                    <h3>Agua de Fresa <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$60</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-jamaica.jpg" alt="Agua Jamaica" class="img-card">
+                    </figure>
+                    <h3>Agua de Jamaica <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$40</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-limon.jpg" alt="Agua de Limon" class="img-card">
+                    </figure>
+                    <h3>Agua de Limon <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$50</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-mandarina.jpg" alt="Agua de Mandarina" class="img-card">
+                    </figure>
+                    <h3>Agua de Mandarina <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$70</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-naranja.jpg" alt="Agua de Naranja" class="img-card">
+                    </figure>
+                    <h3>Agua de Naranja <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$70</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-sandia.jpg" alt="Agua de Sandia" class="img-card">
+                    </figure>
+                    <h3>Agua de Sandia <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$55</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/agua-toronja.jpg" alt="Agua de Toronja" class="img-card">
+                    </figure>
+                    <h3>Agua de Toronja <span class="size-card">1 lt</span></h3>
+                    <h4 class="price-card">$45</h4>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <!-- Seccion de Platillos del Menu -->
+            <h2 class="section-title">Platillos</h2>
+            <!-- Grid que contiene 8 tarjetas cada una con un platillo -->
+            <div class="grid-container menu-grid">
+                <!-- Cada div con la clase menu-card representa una tarjeta que muestra un platillo -->
+                <div class="menu-card">
+                    <!-- Imagen del platillo -->
+                    <figure>
+                        <img src="./img/menu/enchiladas-verdes.jpg" alt="Enchiladas Verdes" class="img-card">
+                    </figure>
+                    <!-- Nombre del platillo dentro del span se se indica la cantidad de piezas o peso -->
+                    <h3>Enchiladas Verdes <span class="size-card">3 pza.</span></h3>
+                    <!-- Precio del platillo -->
+                    <h4 class="price-card">$60</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/ensalada.jpg" alt="Ensalada" class="img-card">
+                    </figure>
+                    <h3>Ensalada <span class="size-card">200 g</span></h3>
+                    <h4 class="price-card">$80</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/fideos-calabaza.jpg" alt="Fideos de Calabaza" class="img-card">
+                    </figure>
+                    <h3>Fideos de Calabaza <span class="size-card">200 g</span></h3>
+                    <h4 class="price-card">$80</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/hamburguesa-vegana-tipo-pollo.jpg" alt="Hamburguesa Carne Tipo Pollo" class="img-card">
+                    </figure>
+                    <h3>Hamburguesa Carne Tipo Pollo <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$110</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/hamburguesa-vegana.jpg" alt="Hamburguesa Carne Tipo Res" class="img-card">
+                    </figure>
+                    <h3>Hamburguesa Carne Tipo Res <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$110</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/pasta-vegana.jpg" alt="Pasta Vegana" class="img-card">
+                    </figure>
+                    <h3>Pasta Vegana <span class="size-card">200 g</span></h3>
+                    <h4 class="price-card">$90</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/tacos-sustituto-carne.jpg" alt="Tacos Carne Tipo Res" class="img-card">
+                    </figure>
+                    <h3>Tacos Carne Tipo Res <span class="size-card">4 pza.</span></h3>
+                    <h4 class="price-card">$85</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/tacos-verdura.jpg" alt="Tacos de Verdura" class="img-card">
+                    </figure>
+                    <h3>Tacos de Verdura <span class="size-card">3 pza.</span></h3>
+                    <h4 class="price-card">$65</h4>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <!-- Seccion de Postres del Menu -->
+            <h2 class="section-title">Postres</h2>
+            <!-- Grid que contiene 8 tarjetas cada una con un postre -->
+            <div class="grid-container menu-grid">
+                <!-- Cada div con la clase menu-card representa una tarjeta que muestra un postre -->
+                <div class="menu-card">
+                    <!-- Imagen del postre -->
+                    <figure>
+                        <img src="./img/menu/brownies.jpg" alt="Brownies" class="img-card">
+                    </figure>
+                    <!-- Nombre del postre dentro del span se se indica la cantidad de piezas o peso -->
+                    <h3>Brownies <span class="size-card">2 pza.</span></h3>
+                    <!-- Precio del postre -->
+                    <h4 class="price-card">$80</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/cheesecake.jpg" alt="Cheese Cake" class="img-card">
+                    </figure>
+                    <h3>Cheese Cake <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$90</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/gelatina-nuez.jpg" alt="Gelatina de Nuez" class="img-card">
+                    </figure>
+                    <h3>Gelatina de Nuez <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$40</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/helado.jpg" alt="Helado de Chocolate" class="img-card">
+                    </figure>
+                    <h3>Helado de Chocolate <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$90</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/mousse-chocolate.jpg" alt="Mousse de Chocolate" class="img-card">
+                    </figure>
+                    <h3>Mousse de Chocolate <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$120</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/mousse-zanahoria.jpg" alt="Mousse de Zanahoria" class="img-card">
+                    </figure>
+                    <h3>Mousse de Zanahoria <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$100</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/pastel.jpg" alt="Pastel de Fresa" class="img-card">
+                    </figure>
+                    <h3>Pastel de Fresa <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$130</h4>
+                </div>
+                <div class="menu-card">
+                    <figure>
+                        <img src="./img/menu/tarta-zanahoria.jpg" alt="Pastel de Zanahoria" class="img-card">
+                    </figure>
+                    <h3>Pastel de Zanahoria <span class="size-card">1 pza.</span></h3>
+                    <h4 class="price-card">$110</h4>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

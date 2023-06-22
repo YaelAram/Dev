@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component Snapshot 1`] = `
+<div>
+  <h1>
+    React GIF App
+  </h1>
+  <form
+    aria-label="form"
+  >
+    <input
+      placeholder="e.g. Dr. House"
+      type="text"
+    />
+  </form>
+</div>
+`;

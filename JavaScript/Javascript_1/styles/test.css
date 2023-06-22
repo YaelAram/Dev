@@ -1,0 +1,77 @@
+html{
+    margin: 0.75rem;
+    font-family: 'Inconsolata', monospace;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+div{
+    padding-bottom: 1rem;
+}
+
+div, form{
+    display: grid;
+    grid-template-columns: repeat( 12, 1fr);
+    gap: 0.25rem;
+}
+
+form{
+    grid-auto-rows: minmax( 2rem, auto );
+}
+
+input{
+    grid-column: 5 / 9;
+    grid-row: 1;
+}
+
+#number7, #number4, #number1, #reset{
+    grid-column: 5;
+}
+
+#number8, #number5, #number2, #number0{
+    grid-column: 6;
+}
+
+#number9, #number6, #number3, #equals{
+    grid-column: 7;
+}
+
+#add, #sub, #mult, #div{
+    grid-column: 8;
+}
+
+#number7, #number8, #number9, #add{
+    grid-row: 1;
+}
+
+#number4, #number5, #number6, #sub{
+    grid-row: 2;
+}
+
+#number1, #number2, #number3, #mult{
+    grid-row: 3;
+}
+
+#number0, #equals, #reset, #div{
+    grid-row: 4;
+}
+
+.numberButton, .operationButton, .equalsButton, .resetButton{
+    color: white;
+}
+
+.numberButton{
+    background-color: #2940d3;
+}
+
+.operationButton{
+    background-color: black;
+}
+
+.equalsButton{
+    background-color: #81b214;
+}
+
+.resetButton{
+    background-color: #ce1212;
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logInMarginTopDefault">24dp</dimen>
+    <dimen name="elevation">5dp</dimen>
+    <dimen name="marginToDoItem">3dp</dimen>
+</resources>

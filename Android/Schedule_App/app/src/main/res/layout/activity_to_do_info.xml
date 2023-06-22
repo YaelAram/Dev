@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ToDoInfoActivity">
+
+    <TextView
+        android:id="@+id/to_do_item_title_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/toDoItemTitleInfo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/to_do_item_title_text"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:ems="10"
+        android:fontFamily="@font/lato_regular"
+        android:hint="@string/toDoItemTitleInfoExample"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/to_do_item_title_info"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_title_info" />
+
+    <TextView
+        android:id="@+id/to_do_item_date_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/toDoItemDateInfo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/to_do_item_title_text"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_title_text" />
+
+    <ImageButton
+        android:id="@+id/to_do_item_date_button"
+        android:layout_width="43dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/descriptionImageButtonDate"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintBottom_toBottomOf="@+id/to_do_item_date_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/to_do_item_date_info"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_date_info"
+        app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+    <TextView
+        android:id="@+id/to_do_item_date_text"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_field"
+        android:clickable="true"
+        android:elevation="@dimen/elevation"
+        android:ems="10"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center_vertical"
+        android:hint="@string/toDoItemDateInfoExample"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/to_do_item_date_button"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_date_info" />
+
+    <TextView
+        android:id="@+id/to_do_item_time_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/toDoItemTimeInfo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_date_button" />
+
+    <ImageButton
+        android:id="@+id/to_do_item_time_button"
+        android:layout_width="39dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="12dp"
+        android:contentDescription="@string/descriptionImageButtonTime"
+        android:elevation="@dimen/elevation"
+        app:layout_constraintBottom_toBottomOf="@+id/to_do_item_time_text"
+        app:layout_constraintStart_toStartOf="@+id/to_do_item_time_info"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_time_info"
+        app:srcCompat="@android:drawable/ic_lock_idle_alarm" />
+
+    <TextView
+        android:id="@+id/to_do_item_time_text"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_field"
+        android:clickable="true"
+        android:elevation="@dimen/elevation"
+        android:ems="10"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="center_vertical"
+        android:hint="@string/toDoItemTimeInfoExample"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/to_do_item_time_button"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_time_info" />
+
+    <TextView
+        android:id="@+id/to_do_item_short_des_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/toDoItemShortDescriptionInfo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_time_button" />
+
+    <EditText
+        android:id="@+id/to_do_item_short_des_text"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:ems="10"
+        android:fontFamily="@font/lato_regular"
+        android:hint="@string/toDoItemShortDescriptionInfoExample"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_short_des_info" />
+
+    <TextView
+        android:id="@+id/to_do_item_long_des_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/toDoItemLongDescriptionInfo"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/to_do_item_short_des_text"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_short_des_text" />
+
+    <EditText
+        android:id="@+id/to_do_item_long_des_text"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:ems="10"
+        android:gravity="clip_horizontal"
+        android:hint="@string/toDoItemLongDescriptionInfoExample"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:minLines="5"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/to_do_item_long_des_info"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_long_des_info" />
+
+    <TextView
+        android:id="@+id/to_do_item_importance_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/toDoItemImportance"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_long_des_text" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_do_item_importance_info">
+
+        <RadioButton
+            android:id="@+id/to_do_item_unimportant_event"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/toDoItemUnimportantEvent"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/to_do_item_normal_event"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/toDoItemNormalEvent" />
+
+        <RadioButton
+            android:id="@+id/to_do_item_important_event"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/toDoItemImportantEvent" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

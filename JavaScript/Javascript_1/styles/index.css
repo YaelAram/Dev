@@ -1,0 +1,67 @@
+html{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+main{
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-auto-rows: minmax(200x, auto);
+}
+
+.center-main{
+    grid-column: 2;
+    grid-row: 1;
+    padding: 2rem;
+    background-color: #ebebeb;
+}
+
+h1{
+    margin: 0;
+}
+
+p, h1{
+    word-spacing: 1px;
+    line-height: 1.2;
+    text-align: justify;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+
+input[type="number"]{
+    border: 1px solid black;
+}
+
+input[type="number"]:focus{
+    border: 2px solid blue;
+    outline: none;
+}
+
+.message-for-user{
+    padding: 0.25rem;
+    margin-top: 2rem;
+}
+
+.message-suggestion{
+    background-color: cornflowerblue;
+    color: blue;
+}
+
+.message-right-answer{
+    background-color: darkseagreen;
+    color: darkgreen;
+}
+
+@media only screen and (max-width: 750px) {
+    input[type="button"]{
+        margin-top: 1rem;
+    }
+
+    .message-for-user{
+        margin-top: 1rem;
+    }
+}

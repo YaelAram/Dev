@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Végétalien</title>
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- CDN para obtener los tipos de fuentes de la pagina -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra Superior de Navegacion -->
+    <nav>
+        <div class="grid-container nav-container">
+            <!-- Seccion con el logo y nombre del restaurante, ademas de ser un link para regresar a index.html -->
+            <a href="./index.html" class="navbar-a nav-logo-rest">
+                <img src="./img/global/leaf-svgrepo-com.svg" alt="Logo Restaurante" class="nav-logo">
+                <p class="nav-p res-nombre">Végétalien</p>
+            </a>
+            <div class="nav-options">
+                <!-- Seccion de Links a las otras pagina de la aplicacion -->
+                <ul class="nav-ul">
+                    <li class="nav-li"><a href="./menu.html" class="navbar-a">Menu</a></li>
+                    <li class="nav-li"><a href="./promociones.html" class="navbar-a">Promociones</a></li>
+                    <li class="nav-li"><a href="./galeria.html" class="navbar-a">Galeria</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Contenido Principal de la pagina -->
+    <main>
+        <!-- Seccion Portada con Boton para ir a menu -->
+        <section>
+            <img src="./img/index/presentacion.jpg" alt="" class="presentacion">
+            <a href="./menu.html"><input type="button" value="Ir a Menu" class="menu-btn"></a>
+        </section>
+        <!-- Seccion ¿Quienes Somos? -->
+        <section class="container">
+            <!-- Titulo de la seccion -->
+            <h2 class="main-h2">¿Quienes Somos?</h2>
+            <div class="grid-container img-des-container">
+                <!-- Texto hablando sobre el restaurante -->
+                <div class="info">
+                    <p>
+                        Végétalien nace con el objetivo de ofrecer a la poblacion mexicana la posibilidad de disfrutar 
+                        de una deliciosa comida 100% vegana a bajo costos.
+                    </p>
+                    <p>
+                        <strong>Mision: </strong>
+                        Ofrecer comida 100% vegana a bajo costo e incentivar el estilo de vida vegano
+                    </p>
+                    <p>
+                        <strong>Vision:</strong>
+                        Ser la primer opcion de comida vegana a la vez que ayudamos a combatir el mito de la cocina vegana 
+                        como una cocina cara y aburrida.
+                    </p>
+                </div>
+                <!-- Imagen del restaurante -->
+                <figure class="img-container">
+                    <img src="./img/index/restaurante.jpg" alt="Imagen Frontal Restaurante" class="img">
+                </figure>
+            </div>
+        </section>
+        <!-- Seccion ¿Donde nos encontramos? -->
+        <section class="container">
+            <!-- Titulo de la seccion -->
+            <h2 class="main-h2">¿Donde nos encontramos?</h2>
+            <div class="grid-container main-map-container">
+                <!-- Seccion de Google Maps -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.5387853955535!2d-99.04537638509265!3d19.475442236860108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fb1ae7b9f1c7%3A0x501a154bf16c02f1!2sFacultad%20de%20Estudios%20Superiores%20Arag%C3%B3n%20UNAM!5e0!3m2!1sen!2smx!4v1669507010026!5m2!1sen!2smx"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="main-map">
+                </iframe>
+            </div>
+        </section>
+        <!-- Seccion Formas de Pago -->
+        <section class="container">
+            <!-- Titulo de la seccion -->
+            <h2 class="main-h2">Formas de Pago</h2>
+            <div class="grid-container main-card-container">
+                <!-- Cada div con la clase main-card representa un card o tarjeta inividual -->
+                <div class="main-card">
+                    <!-- Icono de la tarjeta -->
+                    <figure>
+                        <img src="./img/index/dollar-bills-stack-svgrepo-com.svg" alt="Pago en Efectivo" class="card-icon">
+                    </figure>
+                    <!-- Titulo de la tarjeta -->
+                    <h3 class="card-title">Efectivo</h3>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/paypal-svgrepo-com.svg" alt="Pago PayPal" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">PayPal</h3>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/apple-pay-logo-svgrepo-com.svg" alt="Pago Apple Pay" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Apple Pay</h3>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/credit-card-svgrepo-com.svg" alt="Pago Tarjeta" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Tarjeta de Credito o Debito</h3>
+                </div>
+            </div>
+        </section>
+        <!-- Seccion Opiniones de otros clientes -->
+        <section class="container">
+            <!-- Titulo de la seccion -->
+            <h2 class="main-h2">¿Que opinan otros clientes?</h2>
+            <div class="grid-container main-card-container">
+                <!-- Cada div con la clase main-card representa una tarjeta -->
+                <div class="main-card">
+                    <!-- Imagen de la tarjeta -->
+                    <figure>
+                        <img src="./img/index/person-svgrepo-com.svg" alt="Icono Persona" class="card-icon">
+                    </figure>
+                    <!-- Titulo de la tarjeta -->
+                    <h3 class="card-title">Juan Carlos</h3>
+                    <!-- Cometario del cliente -->
+                    <p class="card-des ">Muy buen lugar para comer y pasar un rato</p>
+                    <!-- Tiemp desde que se publico -->
+                    <p class="card-visita">Hace 2 dias</p>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/person-svgrepo-com.svg" alt="Icono Persona" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Oscar</h3>
+                    <p class="card-des">Comida 100% vegana y deliciosa, muy recomendable</p>
+                    <p class="card-visita">Hace 10 dias</p>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/person-svgrepo-com.svg" alt="Icono Persona" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Montserrat</h3>
+                    <p class="card-des">Excelente comida y agradable ambiente</p>
+                    <p class="card-visita">Hace 2 semanas</p>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/person-svgrepo-com.svg" alt="Icono Persona" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Jesus</h3>
+                    <p class="card-des">Ambiente familiar, comida y musica agradable</p>
+                    <p class="card-visita">Hace 2 horas</p>
+                </div>
+            </div>
+        </section>
+        <!-- Seccion de Formas de Contacto -->
+        <section class="container">
+            <!-- Titulo de la seccion -->
+            <h2 class="main-h2">Contactanos</h2>
+            <div class="grid-container main-card-container">
+                <!-- Cada div con la clase main-card representa una tarjeta -->
+                <div class="main-card">
+                    <!-- Imagen de la tarjeta -->
+                    <figure>
+                        <img src="./img/index/facebook-svgrepo-com.svg" alt="Icono Facebook" class="card-icon">
+                    </figure>
+                    <!-- Titulo de la tarjeta -->
+                    <h3 class="card-title">Facebook</h3>
+                    <!-- Descripcion del medio de contacto -->
+                    <p class="card-des">Buscanos como Végétalien</p>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/whatsapp-svgrepo-com.svg" alt="Icono WhatsApp" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">WhatsApp</h3>
+                    <p class="card-des">55 8964 7153</p>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/telephone-svgrepo-com.svg" alt="Icono Telefono" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Telefono</h3>
+                    <p class="card-des">55 7896 5316</p>
+                </div>
+                <div class="main-card">
+                    <figure>
+                        <img src="./img/index/twitter-svgrepo-com.svg" alt="Icono Twitter" class="card-icon">
+                    </figure>
+                    <h3 class="card-title">Twitter</h3>
+                    <p class="card-des">Buscanos como Restaurant_Végétalien</p>
+                </div>
+            </div>
+        </section>
+        <!-- Seccion Fundador -->
+        <section class="container">
+            <!-- Titulo de la seccion -->
+            <h2 class="main-h2">Castillo Sanchez Yael Aram</h2>
+            <!-- Subtitulo de la seccion -->
+            <h3 class="main-h2">Fundador</h3>
+            <div class="grid-container fundador-container">
+                <!-- Imagen del fundador -->
+                <figure class="fundador-img-container">
+                    <img src="./img/index/profile.jpg" alt="Imagen Fundador" class="fundador-img">
+                </figure>
+                <!-- Seccion de informacion sobre el fundador -->
+                <div class="fundador-info">
+                    <p>Universidad Nacional Autonoma de Mexico</p>
+                    <p>Facultad de Estudios Superiores Aragon</p>
+                    <p><strong>Carrera</strong>: Ingenieria en Computacion</p>
+                    <p><strong>Materia</strong>: Programacion Web 1</p>
+                    <p><strong>Tarea</strong>: Proyecto Final</p>
+                    <p><strong>Profesor</strong>: Candelario Alavez Jorge Luis</p>
+                    <p><strong>Turno</strong>: Vespertino</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

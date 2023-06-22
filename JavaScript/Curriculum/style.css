@@ -1,0 +1,289 @@
+/* General */
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+.icon-text-box{
+    display: flex;
+    align-items: center;
+}
+
+.nav-title, .icon-span-des{
+    margin-left: 0.5rem;
+}
+
+.icon-span-des, .about{
+    text-decoration: none;
+    color: black;
+}
+
+p{
+    text-align: justify;
+}
+
+a, li, h1, h2, h3, p{
+    line-height: 1.75;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Header */
+nav{
+    width: calc(100vw - 0.75rem);
+    background-color: black;
+    position: fixed;
+    top: 0px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    padding: 1rem 1rem;
+    text-align: right;
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 0.125rem;
+}
+
+.svg-icon-header{
+    height: 25px;
+    width: 25px;
+}
+
+.nav-title{
+    text-align: left;
+    font-size: large;
+    font-weight: bolder;
+    color: white;
+}
+
+.navbar-ul{
+    margin-block: 0;
+    padding-inline-start: 0;
+}
+
+.navbar-li{
+    display: inline;
+    margin-right: 1rem;
+}
+
+.navbar-a{
+    text-decoration: none;
+}
+
+.navbar-icon{
+    vertical-align: middle;
+}
+
+.navbar-span{
+    display: none;
+}
+
+/* Main */
+main{
+    margin-top: 6rem;
+    padding: 1.5rem;
+}
+
+.svg-icon{
+    height: 20px;
+    width: 20px;
+}
+
+/* Image - Name */
+.image-title{
+    text-align: center;
+}
+
+.img-profile{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 1.5rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.name-des{
+    margin-block: 0;
+}
+
+/* Educacion */
+.escuelas-cards, .proyectos-cards{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+}
+
+.escuela-card, .proyecto-card{
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
+    margin-bottom: 2rem;
+}
+
+.escuela-card{
+    text-align: center;
+}
+
+.escuela-card, .proyecto-info{
+    padding: 1rem;
+}
+
+.escuela-logo{
+    width: 120px;
+    height: 120px;
+}
+
+/* Experiencia Laboral */
+.fondo{
+    margin-block: 0;
+    margin-inline: 0;
+}
+
+.fondo-proyecto{
+    width: 100%;
+}
+
+.titulo-proyecto{
+    margin-block: 0;
+}
+
+.about{
+    font-style: italic;
+    font-weight: lighter;
+    display: block;
+    text-align: right;
+    text-decoration: underline;
+}
+
+/* Referencias */
+.tabla-referencias{
+    text-align: center;
+    width: 100%;
+}
+
+tr:nth-child(even){
+    background-color: rgb(201, 201, 201);
+}
+
+th{
+    background-color: black;
+    color: white;
+}
+
+th, td{
+    padding: 0.4rem 0.3rem;
+}
+
+/* Contacto */
+.contact-item{
+    margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media only screen and (min-width: 600px) {
+    nav{
+        display: grid;
+        grid-template-columns: 3fr 7fr;
+        gap: 0.125rem;
+    }
+
+    .svg-icon-header{
+        height: 36px;
+        width: 36px;
+    }
+
+    .svg-icon{
+        height: 25px;
+        width: 25px;
+    }
+
+    .navbar-li{
+        display: inline;
+        margin-right: 1.75rem;
+    }
+
+    th, td{
+        padding: 0.8rem 0.4rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 11fr;
+        gap: 0.125rem;
+    }
+
+    .navbar-ul{
+        list-style-type: none;
+    }
+
+    .navbar-li{
+        font-size: large;
+        font-weight: lighter;
+        margin-right: 1.2rem;
+    }
+
+    .navbar-li:hover{
+        font-weight: bold;
+    }
+
+    .navbar-a{
+        color: white;
+    }
+
+    .navbar-span{
+        margin-left: 0.25rem;
+        display: inline;
+    }
+
+    .svg-icon{
+        height: 20px;
+        width: 20px;
+    }
+
+    /* Educacion */
+    .escuelas-cards, .proyectos-cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .escuela-card{
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        gap: 0.125rem;
+    }
+
+    /* Educacion */
+    .proyectos-cards{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+
+    .escuelas-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.2rem;
+    }
+}

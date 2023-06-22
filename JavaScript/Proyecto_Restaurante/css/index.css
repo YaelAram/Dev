@@ -1,0 +1,125 @@
+.main-h2, .card-title, .main-card{
+    text-align: center;
+}
+
+/* Presentacion */
+.presentacion{
+    width: 100%;
+    height: 600px;
+}
+
+/*
+    Cambiamos el cursor para visualmente indicar que el cursor esta sobre el boton, se cambia su color de fondo y 
+    redondeamos sus puntas, adicionalmente cambiamos su posicion para que se encuentre dentro de la imagen
+*/
+.menu-btn{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: var(--letter);
+    border-radius: var(--border-radious);
+    background-color: var(--primary-color);
+    border: 0;
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+/* Cmabiamos el color de fondo y de fuente cuando el cursor este sobre el boton */
+.menu-btn:hover{
+    background-color: var(--secondary-color);
+    color: black;
+}
+
+/* Seccion ¿Quienes Somos? */
+.img-des-container{
+    grid-template-columns: 1fr 3fr 2fr 1fr;
+    margin-bottom: 2rem;
+}
+
+.img-container{
+    grid-column: 3;
+}
+
+.img{
+    width: 100%;
+    border-radius: var(--border-radious);
+}
+
+.info{
+    grid-column: 2;
+    background-color: var(--auxiliar);
+    padding: 2rem;
+    border-radius: var(--border-radious);
+    text-align: justify;
+}
+
+/* Seccion ¿Donde nos encontramos? */
+
+.main-map-container{
+    grid-template-columns: 2fr 6fr 2fr;
+    gap: 0.125rem;
+}
+
+.main-map{
+    border: 0;
+    border-radius: var(--border-radious);
+    grid-column: 2;
+    width: 100%;
+    height: 450px;
+}
+
+/* Secciones de Formas de Pago, Contactos y Opiniones */
+
+.main-card-container{
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: 0 12rem;
+}
+
+.main-card{
+    border-radius: var(--border-radious);
+    background-color: var(--auxiliar);
+    padding: 1rem;
+}
+
+.card-icon{
+    width: 60px;
+    height: 60px;
+}
+
+.card-des{
+    font-weight: 300;
+}
+
+.card-visita{
+    margin-block: 0;
+    text-align: right;
+    font-style: italic;
+    color: #2C702E;
+}
+
+/* Seccion Fundador */
+
+.fundador-container{
+    grid-template-columns: 2fr 2fr 3fr 2fr;
+    margin-bottom: 2rem;
+}
+
+.fundador-img-container{
+    grid-column: 2;
+}
+
+.fundador-img{
+    border-radius: 50%;
+    width: 100%;
+}
+
+.fundador-info{
+    grid-column: 3;
+    background-color: var(--auxiliar);
+    padding-left: 2rem;
+}

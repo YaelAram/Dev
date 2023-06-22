@@ -1,0 +1,15 @@
+{
+  "name": "3_aplicacion_consola",
+  "version": "0.0.1",
+  "description": "Primera aplicacion de consola",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yael Castillo",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^17.3.1"
+  }
+}

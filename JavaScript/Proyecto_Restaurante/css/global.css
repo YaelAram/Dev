@@ -1,0 +1,118 @@
+/*
+    Este archivo CSS esta presente en todas las paginas de la aplicacion, ya que se encarga de definir
+    el estilo del navbar, definir la clase grid-container para crear divs con este tipo de sistema de 
+    diseño, asi como definir algunas variables para almacenar la paleta de colores
+*/
+
+/* 
+    Aqui definimos las variables de nuestra paleta de colores y un valor general para todas aquellos
+    elementos que mostraran un border radious
+*/
+:root{
+    --primary-color: #2C702E;
+    --secondary-color: #8BC34A;
+    --accent: #DCE775;
+    --auxiliar: #FFF59D;
+    --letter: #fff;
+    --border-radious: 0.75rem 
+}
+
+/* Aqui definimos la fuente que sera utilizada a lo largo de nuestra aplicacion web */
+body{
+    margin: 0;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+/* Agregamos un poco de espacio entre letras y palabras para tener un diseño menos  */
+a, p, h1, h2, h3, h4, input{
+    letter-spacing: 2px;
+    word-spacing: 1px;
+}
+
+/* Definimos la clase que convertira un elemento en un grid */
+.grid-container{
+    display: grid;
+}
+
+/* NavBar */
+/* 
+    Cambiamos el color de fondo del Navbar y hacemos que siempre se muestre en la parte superior de la pagina sin 
+    importar que tanto nos desplacemos en la pagina
+*/
+nav{
+    background-color: var(--primary-color, #2C702E);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0.3rem 0;
+}
+
+/* 
+    Definimos 2 columnas, la primera para el nombre del restaurante y el logo y la segunda columna
+    para las opciones del menu superior
+*/
+.nav-container{
+    grid-template-columns: 3fr 7fr;
+    gap: 0.125rem;
+}
+
+/* Alineamos el logo y el nombre del restaurante para que se muestre a la derecha y alineado al centro verticalmente */
+.nav-logo-rest{
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo{
+    width: 30px;
+    height: 30px;
+    margin-right: 0.5rem;
+}
+
+/* 
+    Evitamos el salto de linea de cada li (cada li es una opcion del Navbar) y de la etique p que contiene el nombre
+    del restaurante
+*/
+.nav-p, .nav-li{
+    display: inline;
+}
+
+/* Alineamos las opcines del Navbar a la derecha */
+.nav-options{
+    text-align: right;
+}
+
+.nav-ul{
+    margin-block: 0;
+    padding-inline-start: 0;
+    margin: 1rem 1rem 1rem 0;
+}
+
+.nav-li{
+    margin-right: 1rem;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.navbar-a{
+    text-decoration: none;
+    color: var(--letter);
+}
+
+/* Cambiamos la fuente para el nombre del restaurante a un fuente con mas estilo o personalidad */
+.nav-p{
+    font-family: 'Dancing Script', cursive;
+    margin-block: 0;
+}
+
+/* Aumentamos el tamaño de fuente y grosor para el nombre del restaurante, ya que es un elemento importante */
+.res-nombre{
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+/* Main */
+.container{
+    margin-top: 3rem;
+}

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter Component Counter snapshot 1`] = `
+<div>
+  <h1>
+    Counter App
+  </h1>
+  <h2>
+    0
+  </h2>
+  <input
+    aria-label="btn-substract"
+    type="button"
+    value="Substract 1"
+  />
+  <input
+    aria-label="btn-reset"
+    type="button"
+    value="Reset"
+  />
+  <input
+    aria-label="btn-add"
+    type="button"
+    value="Add 1"
+  />
+</div>
+`;

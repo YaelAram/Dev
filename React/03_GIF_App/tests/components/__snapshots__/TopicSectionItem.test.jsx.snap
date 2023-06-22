@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopicSectionItem component Snapshot TopicSectionItem component 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Rammstein"
+      src="https://rammstein.com/rammstein.gif"
+    />
+    <p>
+      Rammstein
+    </p>
+  </div>
+</div>
+`;

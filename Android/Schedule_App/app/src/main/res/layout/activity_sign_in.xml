@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SignInActivity">
+
+    <TextView
+        android:id="@+id/titleSignInActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/signInLabel"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/instructionSignInActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/instructionLabel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/titleSignInActivity"
+        app:layout_constraintTop_toBottomOf="@+id/titleSignInActivity" />
+
+    <TextView
+        android:id="@+id/nameUserTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/nameUserLabel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/instructionSignInActivity"
+        app:layout_constraintTop_toBottomOf="@+id/instructionSignInActivity" />
+
+    <EditText
+        android:id="@+id/nameUserInputText"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:fontFamily="@font/lato_regular"
+        android:hint="@string/nameUserExample"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/nameUserTextView"
+        app:layout_constraintTop_toBottomOf="@+id/nameUserTextView" />
+
+    <TextView
+        android:id="@+id/lastNameUserTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/lastNameUserLabel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nameUserInputText"
+        app:layout_constraintTop_toBottomOf="@+id/nameUserInputText" />
+
+    <EditText
+        android:id="@+id/lastNameUserInputText"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:fontFamily="@font/lato_regular"
+        android:hint="@string/lastNameUserExample"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lastNameUserTextView"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameUserTextView" />
+
+    <TextView
+        android:id="@+id/emailUserTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/emailUserLabel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/lastNameUserInputText"
+        app:layout_constraintTop_toBottomOf="@+id/lastNameUserInputText" />
+
+    <EditText
+        android:id="@+id/emailUserInputText"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:fontFamily="@font/lato_regular"
+        android:hint="@string/emailUserExample"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/emailUserTextView"
+        app:layout_constraintTop_toBottomOf="@+id/emailUserTextView" />
+
+    <TextView
+        android:id="@+id/passwordUserTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/passwordUserLabel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/emailUserInputText"
+        app:layout_constraintTop_toBottomOf="@+id/emailUserInputText" />
+
+    <EditText
+        android:id="@+id/passwordUserInputText"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/input_field"
+        android:elevation="@dimen/elevation"
+        android:ems="10"
+        android:fontFamily="@font/lato_regular"
+        android:hint="@string/passwordUserLabel"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordUserTextView"
+        app:layout_constraintTop_toBottomOf="@+id/passwordUserTextView" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button"
+        android:elevation="@dimen/elevation"
+        android:fontFamily="@font/lato_bold"
+        android:text="@string/signInLabel"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/logInMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato_light"
+        android:text="@string/logInMessageLabel"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/passwordUserInputText"
+        app:layout_constraintTop_toBottomOf="@+id/passwordUserInputText" />
+
+    <TextView
+        android:id="@+id/goLogInMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/logInMessage"
+        android:textColor="@color/purple_500"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/logInMessage"
+        app:layout_constraintTop_toBottomOf="@+id/passwordUserInputText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,54 @@
+<resources>
+    //MainActivity
+    <string name="app_name">Schedule App</string>
+    <string name="welcomeMessage">Welcome to Schedule App!</string>
+    <string name="logInMessage">Log In</string>
+    <string name="emailUserLabel">Email</string>
+    <string name="emailUserExample">user@service.com</string>
+    <string name="passwordUserLabel">Password</string>
+    <string name="signInMessageLabel">Are you not a member?</string>
+    <string name="signInButton">Register</string>
+    <string name="emailFieldEmpty">Please check the email field is empty</string>
+    <string name="passwordFieldEmpty">Please check the password fields is empty</string>
+    <string name="emailFieldWrong">Please check the email entered is not valid</string>
+    <string name="passwordFieldWrong">Please check the password length, at least 4 characters</string>
+    <string name="passwordAndEmailWrong">Please check the data entered</string>
+    //SignInActivity
+    <string name="signInLabel">Sign In</string>
+    <string name="instructionLabel">Please enter the fields to be a member.</string>
+    <string name="nameUserLabel">Name</string>
+    <string name="nameUserExample">Steve</string>
+    <string name="lastNameUserLabel">Last Name</string>
+    <string name="lastNameUserExample">Jobs</string>
+    <string name="logInMessageLabel">Are you a member?</string>
+    <string name="userNameFieldEmpty">Please check the name field is empty</string>
+    <string name="lastNameFieldEmpty">Please check the last name field is empty</string>
+    //ToDoActivity
+    <string name="labelToDoActivity">To Do List</string>
+    <string name="descriptionFAB">Add Item</string>
+    <string name="deleteItem">Delete</string>
+    <string name="itemDeletedSuccessfully">Item deleted successfully</string>
+    <string name="creatingNewItemTitle">New Item</string>
+    //ToDoInfoActivity
+    <string name="toDoItemTitleInfo">Title</string>
+    <string name="toDoItemDateInfo">Date</string>
+    <string name="toDoItemTimeInfo">Time</string>
+    <string name="toDoItemShortDescriptionInfo">Short Description</string>
+    <string name="toDoItemLongDescriptionInfo">Long Description</string>
+    <string name="toDoItemImportance">Priority</string>
+    <string name="toDoItemUnimportantEvent">Low</string>
+    <string name="toDoItemNormalEvent">Normal</string>
+    <string name="toDoItemImportantEvent">High</string>
+    <string name="toDoItemUpdateInfo">Update</string>
+    <string name="toDoItemSaveInfo">Save</string>
+    <string name="toDoItemTitleInfoExample">Listen Music</string>
+    <string name="toDoItemDateInfoExample">Jan 23 2020</string>
+    <string name="toDoItemTimeInfoExample">18:55</string>
+    <string name="toDoItemShortDescriptionInfoExample">Listen Queen</string>
+    <string name="toDoItemLongDescriptionInfoExample">Open Spotify and listen Queen music</string>
+    <string name="descriptionImageButtonDate">Image button, pick a date</string>
+    <string name="descriptionImageButtonTime">Image button, pick a time</string>
+    <string name="titleFieldEmpty">Please check title field is empty</string>
+    <string name="shortDesFieldEmpty">Please check the short description field is empty</string>
+    <string name="longDesFieldEmpty">Please check the long description field is empty</string>
+</resources>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yael Castillo">
+    <meta name="description" content="Blackjack game simulation">
+    <link rel="stylesheet" href="assets/styles/normalize-min.css">
+    <link rel="stylesheet" href="assets/styles/style-min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo&display=swap" rel="stylesheet">
+    <title>Blackjack</title>
+</head>
+<body>
+    <header>
+        <h1>Blackjack</h1>
+    </header>
+    <main>
+        <div class="button-container">
+            <button class="alert-button" id="new-game-button"><b>New Game</b></button>
+            <button class="primary-button" id="take-card-button"><b>Take a card</b></button>
+            <button class="primary-button" id="stop-game-button"><b>Stop Game</b></button>
+        </div>
+        <div class="player-container">
+            <h2>Player 1: <span id="player-score-id">0</span></h2>
+            <div class="card-section" id="player-card-section">
+            </div>
+        </div>
+        <div class="computer-container">
+            <h2>Computer: <span id="computer-score-id">0</span></h2>
+            <div class="card-section" id="computer-card-section">
+            </div>
+        </div>
+    </main>
+    <script src="assets/scripts/underscore-mini.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script> -->
+    <script src="assets/scripts/app-min.js"></script>
+</body>
+</html>

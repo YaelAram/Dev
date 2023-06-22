@@ -1,0 +1,120 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styles */
+ul, h1, .input-tape, p, .result{
+    text-align: center;
+}
+
+.active, p, .result, .next-step, .input-tape:focus{
+    font-weight: bold;
+}
+
+.active, .next-step{
+    color: white;
+}
+
+ul, .container, .tape, .status-bar{
+    display: grid;
+    gap: 0.25rem;
+}
+
+nav, .next-step{
+    background-color: black;
+}
+
+ul, .input-tape, .next-step, .status-bar, .result, .next-step{
+    font-size: x-large;
+}
+
+.next-step, .result{
+    padding: 0.75rem 0;
+}
+
+/* NavBar Styles */
+h1, li, .input-tape, p{
+    line-height: 1.5;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+nav{
+    padding: 1.2rem 0;
+}
+
+ul{
+    margin-block: 0;
+    padding-inline-start: 0;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+li{
+    list-style: none;
+    padding-left: 0.5rem;
+}
+
+a{
+    text-decoration: none;
+    color: cornsilk;
+}
+
+/* Page Styles */
+h1{
+    margin-block: 0;
+}
+
+.main-content{
+    padding: 2rem 0;
+}
+
+.container{
+    grid-template-columns: 1fr 5fr 1fr;
+}
+
+.tape, .next-step, .status-bar, .scanned-symbol, .result{
+    grid-column: 2;
+}
+
+.tape{
+    grid-template-columns: 1fr;
+}
+
+/* Tape */
+.input-tape{
+    margin-top: 2rem;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+    border: 0.125rem solid black;
+    outline: none;
+}
+
+/* Tape and Scan */
+.input-tape, .next-step, .status-bar, .result{
+    border-radius: 0.75rem;
+}
+
+/* Scan */
+.next-step{
+    margin-top: 0.75rem;
+    cursor: pointer;
+}
+
+.next-step:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.next-step:hover{
+    opacity: 0.85;
+}
+
+.status-bar{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Result bar */
+.result{
+    margin-top: 1.2rem;
+    background-color: gray;
+    min-height: 1.7rem;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Client</title>
+    <link rel="stylesheet" href="./css/normalize-min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./socket.io/socket.io.js" defer></script>
+    <script src="./js/socket_client.js" defer></script>
+</head>
+<body>
+    <h1>Socket Client</h1>
+    <hr>
+    <p>Connection Status: 
+        <span id="on">Online</span>
+        <span id="off">Offline</span>
+    </p>
+    <input type="text" id="message">
+    <input type="button" value="Send" id="send">
+    <section></section>
+</body>
+</html>

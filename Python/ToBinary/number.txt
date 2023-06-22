@@ -1,0 +1,11 @@
+Binary:
+
+101
+
+Decimal (Original): 0.625
+
+Decimal (Approximation): 0.625
+
+Delta: 0
+
+Delta (%): 0

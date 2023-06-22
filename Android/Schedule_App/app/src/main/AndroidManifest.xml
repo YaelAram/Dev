@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yaelaram.schedule_app">
+
+    <application
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name=".App.MyApplication"
+        android:theme="@style/Theme.Schedule_App">
+        <activity android:name=".Activities.ToDoInfoActivity" />
+        <activity
+            android:name=".Activities.ToDoActivity"
+            android:label="@string/labelToDoActivity"
+            android:theme="@style/Theme.Schedule_App" />
+        <activity
+            android:name=".Activities.SignInActivity"
+            android:theme="@style/Theme.LogIn" />
+        <activity
+            android:name=".Activities.MainActivity"
+            android:theme="@style/Theme.LogIn">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

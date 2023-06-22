@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="author" content="Yael Castillo" />
+        <meta name="description" content="Mini-game, tyr to guess the number" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <link rel="stylesheet" href="styles/index.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+            rel="stylesheet"
+        />
+        <script src="scripts/index.js" defer></script>
+        <title>Let's play a game</title>
+    </head>
+    <body>
+        <main>
+            <div class="center-main">
+                <h1>Let's play a game</h1>
+                <section>
+                    <h2>Try to guess the number</h2>
+                    <p>
+                        We have selected a random number from 1 to 100. See if
+                        you can guess it in 10 turns or fewer. We'll tell you if
+                        your guess was too high or too low.
+                    </p>
+                    <label for="guess-id">Enter a guess:</label>
+                    <input
+                        type="number"
+                        name="guess"
+                        id="guess-id"
+                        placeholder="1"
+                        required
+                    />
+                    <input type="button" value="Guess" />
+                    <p class="message-for-user" id="message"></p>
+                </section>
+            </div>
+        </main>
+    </body>
+</html>

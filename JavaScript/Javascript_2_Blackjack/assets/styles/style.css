@@ -1,0 +1,101 @@
+/* General settings for the page */
+html {
+    font-family: "KoHo", sans-serif;
+    word-spacing: 1px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+body {
+    background-color: #1f441e;
+}
+
+/* Header section */
+header {
+    background-color: black;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+h1 {
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: white;
+    margin: 0;
+}
+
+/* Setting main block as grid */
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+/* Button section */
+.button-container,
+.player-container,
+.computer-container {
+    padding: 0.5rem 1rem;
+}
+
+.button-container {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+}
+
+button {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.1rem;
+    margin: 0 0.25rem;
+}
+
+.alert-button,
+.primary-button {
+    color: white;
+    border-style: none;
+    border-radius: 4px;
+}
+
+.primary-button {
+    background-color: #0061a8;
+}
+
+.alert-button {
+    background-color: #fa1616;
+}
+
+.alert-button:hover,
+.primary-button:hover {
+    opacity: 0.8;
+}
+
+/* Player and computer section */
+h2 {
+    padding-bottom: 0.75rem;
+}
+
+.player-container,
+.computer-container {
+    grid-column: 1 / 4;
+    min-height: 230px;
+}
+
+.player-container {
+    grid-row: 2;
+}
+
+.computer-container {
+    grid-row: 3;
+}
+
+.card-section {
+    margin-left: 2rem;
+}
+
+.card {
+    width: 120px;
+    margin-left: 0.5rem;
+}

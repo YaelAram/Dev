@@ -1,0 +1,16 @@
+{
+  "name": "4_to_do_app",
+  "version": "0.0.1",
+  "description": "Aplicacion que muestre gestione una lista de actividades por hacer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yael Castillo",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^8.2.0",
+    "uuid": "^8.3.2"
+  }
+}

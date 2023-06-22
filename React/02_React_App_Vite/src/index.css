@@ -1,0 +1,27 @@
+body, input[type="button"]{
+    background-color: #21232A;
+    color: white;
+}
+
+body{
+    padding: 2rem 1.5rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    line-height: 1.2;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+input[type="button"]{
+    font-weight: bolder;
+    font-size: large;
+    border: 0.125rem solid white;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    margin: 0 0.5rem;
+}
+
+input[type="button"]:hover{
+    background-color: white;
+    color: #21232A;
+}

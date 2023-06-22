@@ -1,0 +1,118 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 1rem 2rem;
+}
+
+h1, li, input[type="text"], input[type="button"], input[type="submit"]{
+    line-height: 1.5;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+}
+
+h1{
+    margin-block: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+input[type="button"], input[type="submit"]{
+    padding: 0.25rem 0.75rem;
+    font-weight: bolder;
+    background-color: white;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover{
+    color: white;
+    background-color: black;
+}
+
+input[type="button"]:hover, input[type="submit"]:hover, input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+
+input[type="text"], input[type="button"], input[type="submit"]{
+    padding: 0.5rem 1rem;
+}
+
+ul{
+    margin-top: 1rem;
+    padding-inline-start: 0;
+    list-style: none;
+}
+
+li, section, input[type="text"], input[type="button"], input[type="submit"]{
+    border-radius: 0.5rem;
+}
+
+li, section, input[type="text"]{
+    border: 0.125rem solid black;
+}
+
+#root{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 0.5rem;
+}
+
+section{
+    padding: 1.5rem 1rem;
+    box-shadow: 10px 5px 5px gray;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+form{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 0.25rem;
+}
+
+input[type="text"], input[type="submit"]{
+    grid-row: 1;
+}
+
+input[type="text"]{
+    outline: none;
+    padding-left: 1rem;
+    grid-column: 1;
+}
+
+input[type="text"]:focus{
+    font-weight: bolder;
+}
+
+input[type="submit"]{
+    grid-column: 2;
+}
+
+.doneToDo{
+    text-decoration: line-through solid;
+    color: grey;
+}
+
+li{
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    display: grid;
+    grid-template-columns: 1fr 7fr 2fr;
+}
+
+input[type="checkbox"], span, input[type="button"]{
+    grid-row: 1;
+}
+
+input[type="checkbox"]{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0.5rem 1rem;
+    grid-column: 1;
+}
+
+span{
+    padding: 0.5rem 0;
+    grid-column: 2;
+}
+
+input[type="button"]{
+    grid-column: 3;
+}
