@@ -7,7 +7,8 @@ export const useLabels = () => {
     ['labels'],
     getLabels,
     {
-      refetchOnWindowFocus: false
+      refetchOnWindowFocus: false,
+      staleTime: 1_000 * 60 * 60
     }
   );
 
