@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from '@tanstack/react-query';
 
-import { State } from "../interfaces";
+import { State } from '../interfaces';
 import { getIssuesInfinite } from '../providers/githubProvider';
 
 export const useIssuesInfinite = () => {
@@ -17,12 +17,13 @@ export const useIssuesInfinite = () => {
         if (lastPage.length === 0) return;
 
         return pages.length + 1;
-      }
-    }
+      },
+    },
   );
 
   const onChangeLabel = (labelName: string): void => {
-    if (selectedLabels.includes(labelName)) setSelectedLabels(selectedLabels.filter((label) => label !== labelName));
+    if (selectedLabels.includes(labelName))
+      setSelectedLabels(selectedLabels.filter((label) => label !== labelName));
     else setSelectedLabels([...selectedLabels, labelName]);
   };
 
@@ -33,6 +34,6 @@ export const useIssuesInfinite = () => {
     selectedLabels,
     onChangeLabel,
     state,
-    onChangeState
+    onChangeState,
   };
 };

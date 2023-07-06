@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { useQuery } from "@tanstack/react-query";
-import { getIssues } from "../providers/githubProvider";
-import { State } from "../interfaces";
+import { useQuery } from '@tanstack/react-query';
+import { getIssues } from '../providers/githubProvider';
+import { State } from '../interfaces';
 
 export const useIssues = () => {
   const [selectedLabels, setSelectedLabels] = useState<string[]>([]);
@@ -14,14 +14,15 @@ export const useIssues = () => {
     () => getIssues(selectedLabels, state, page),
     {
       refetchOnWindowFocus: false,
-      staleTime: 1_000 * 60 * 10
-    }
+      staleTime: 1_000 * 60 * 10,
+    },
   );
 
   useEffect(() => setPage(1), [state, selectedLabels]);
 
   const onChangeLabel = (labelName: string): void => {
-    if (selectedLabels.includes(labelName)) setSelectedLabels(selectedLabels.filter((label) => label !== labelName));
+    if (selectedLabels.includes(labelName))
+      setSelectedLabels(selectedLabels.filter((label) => label !== labelName));
     else setSelectedLabels([...selectedLabels, labelName]);
   };
 
@@ -49,6 +50,6 @@ export const useIssues = () => {
     // Page
     page,
     nextPage,
-    prevPage
+    prevPage,
   };
 };

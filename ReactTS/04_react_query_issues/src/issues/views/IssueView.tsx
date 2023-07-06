@@ -9,21 +9,23 @@ export const IssueView = () => {
   const { id } = useParams();
   const { issueQuery, issueCommentsQuery } = useIssue(id ?? '0');
 
-  if (issueQuery.isLoading) return (<LoadingIcon />);
+  if (issueQuery.isLoading) return <LoadingIcon />;
 
-  if (!issueQuery.data) return (<Navigate to="/issues/list" />);
+  if (!issueQuery.data) return <Navigate to="/issues/list" />;
 
   return (
     <div className="row mb-5">
       <div className="col-12 mb-3">
-        <Link to='./issues/list'>Go Back</Link>
+        <Link to="./issues/list">Go Back</Link>
       </div>
       <IssueComment issue={issueQuery.data} />
-      {
-        (issueCommentsQuery.isLoading) ?
-          (<LoadingIcon />) :
-          (issueCommentsQuery.data?.map((issue) => <IssueComment key={issue.id} issue={issue} />))
-      }
+      {issueCommentsQuery.isLoading ? (
+        <LoadingIcon />
+      ) : (
+        issueCommentsQuery.data?.map((issue) => (
+          <IssueComment key={issue.id} issue={issue} />
+        ))
+      )}
     </div>
-  )
-}
+  );
+};

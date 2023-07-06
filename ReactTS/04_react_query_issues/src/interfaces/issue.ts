@@ -18,7 +18,7 @@ export interface Issue {
   state: State;
   locked: boolean;
   assignee: null;
-  assignees: any[];
+  assignees: any[] /* eslint-disable-line */;
   milestone: null;
   comments: number;
   created_at: string;
@@ -36,30 +36,30 @@ export interface Issue {
 }
 
 export enum AuthorAssociation {
-  Collaborator = "COLLABORATOR",
-  Contributor = "CONTRIBUTOR",
-  None = "NONE",
+  Collaborator = 'COLLABORATOR',
+  Contributor = 'CONTRIBUTOR',
+  None = 'NONE',
 }
 
 export enum Color {
-  D4C5F9 = "d4c5f9",
-  E7E7E7 = "e7e7e7",
-  The0366D6 = "0366d6",
-  The9149D1 = "9149d1",
+  D4C5F9 = 'd4c5f9',
+  E7E7E7 = 'e7e7e7',
+  The0366D6 = '0366d6',
+  The9149D1 = '9149d1',
 }
 
 export enum Name {
-  CLASigned = "CLA Signed",
-  Dependencies = "dependencies",
-  ReactCoreTeam = "React Core Team",
-  StatusUnconfirmed = "Status: Unconfirmed",
+  CLASigned = 'CLA Signed',
+  Dependencies = 'dependencies',
+  ReactCoreTeam = 'React Core Team',
+  StatusUnconfirmed = 'Status: Unconfirmed',
 }
 
 export enum NodeID {
-  MDU6TGFiZWwxNTU5ODQxNjA = "MDU6TGFiZWwxNTU5ODQxNjA=",
-  MDU6TGFiZWwxNzU3ODE2OTcz = "MDU6TGFiZWwxNzU3ODE2OTcz",
-  MDU6TGFiZWwxNzc1OTU4Mjg1 = "MDU6TGFiZWwxNzc1OTU4Mjg1",
-  MDU6TGFiZWwxOTY4NTgzNzQ = "MDU6TGFiZWwxOTY4NTgzNzQ=",
+  MDU6TGFiZWwxNTU5ODQxNjA = 'MDU6TGFiZWwxNTU5ODQxNjA=',
+  MDU6TGFiZWwxNzU3ODE2OTcz = 'MDU6TGFiZWwxNzU3ODE2OTcz',
+  MDU6TGFiZWwxNzc1OTU4Mjg1 = 'MDU6TGFiZWwxNzc1OTU4Mjg1',
+  MDU6TGFiZWwxOTY4NTgzNzQ = 'MDU6TGFiZWwxOTY4NTgzNzQ=',
 }
 
 export interface PullRequest {
@@ -73,8 +73,8 @@ export interface PullRequest {
 export interface Reactions {
   url: string;
   total_count: number;
-  "+1": number;
-  "-1": number;
+  '+1': number;
+  '-1': number;
   laugh: number;
   hooray: number;
   confused: number;
@@ -84,8 +84,8 @@ export interface Reactions {
 }
 
 export enum State {
-  Open = "open",
-  Closed = "closed"
+  Open = 'open',
+  Closed = 'closed',
 }
 
 export interface User {
@@ -110,6 +110,6 @@ export interface User {
 }
 
 export enum Type {
-  Bot = "Bot",
-  User = "User",
+  Bot = 'Bot',
+  User = 'User',
 }

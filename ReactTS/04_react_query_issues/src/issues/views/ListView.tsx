@@ -5,31 +5,38 @@ import { LoadingIcon } from '../../components/LoadingIcon';
 export const ListView = () => {
   const {
     issuesQuery,
-    selectedLabels, onChangeLabel,
-    state, onChangeState,
-    page, nextPage, prevPage
+    selectedLabels,
+    onChangeLabel,
+    state,
+    onChangeState,
+    page,
+    nextPage,
+    prevPage,
   } = useIssues();
 
   return (
     <div className="row mt-5">
-
       <div className="col-8">
-        {
-          (issuesQuery.isLoading) ?
-            (<LoadingIcon />) :
-            (<IssueList issues={issuesQuery.data ?? []} state={state} onChangeState={onChangeState} />)
-        }
+        {issuesQuery.isLoading ? (
+          <LoadingIcon />
+        ) : (
+          <IssueList
+            issues={issuesQuery.data ?? []}
+            state={state}
+            onChangeState={onChangeState}
+          />
+        )}
 
-        <div className='d-flex mt-2 justify-content-between align-items-center'>
+        <div className="d-flex mt-2 justify-content-between align-items-center">
           <button
-            className='btn btn-outline-primary'
+            className="btn btn-outline-primary"
             onClick={prevPage}
-            disabled={issuesQuery.isFetching || (page === 1)}>
+            disabled={issuesQuery.isFetching || page === 1}>
             Prev
           </button>
-          <span>{(issuesQuery.isFetching) ? 'Loading...' : page}</span>
+          <span>{issuesQuery.isFetching ? 'Loading...' : page}</span>
           <button
-            className='btn btn-outline-primary'
+            className="btn btn-outline-primary"
             onClick={nextPage}
             disabled={issuesQuery.isFetching}>
             Next
@@ -40,8 +47,9 @@ export const ListView = () => {
       <div className="col-4">
         <LabelPicker
           selectedLabels={selectedLabels}
-          onChange={(labelName: string) => onChangeLabel(labelName)} />
+          onChange={(labelName: string) => onChangeLabel(labelName)}
+        />
       </div>
     </div>
-  )
-}
+  );
+};

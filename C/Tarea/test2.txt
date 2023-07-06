@@ -1,0 +1,1 @@
+C++ STL provides various functions that we can use to perform different operations on lists. Let's look at some commonly used list functions to perform the following operations:
