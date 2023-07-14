@@ -34,3 +34,8 @@ const getInfo = async ( id ) => {
 getInfo( 4 )
     .then( ( { empleado, salario } ) => console.log( `${ empleado } tiene un salario de $${ salario }` ) )
     .catch( console.log );
+
+const date = new Date();
+console.log(date);
+console.log(new Intl.DateTimeFormat('es-MX').format(date));
+console.log(new Intl.DateTimeFormat('es-MX', { dateStyle: 'full', timeStyle: 'long', hour12: true }).format(date));

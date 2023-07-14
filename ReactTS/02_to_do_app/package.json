@@ -1,6 +1,6 @@
 {
   "name": "02_to_do_app",
-  "private": true,
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
