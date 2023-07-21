@@ -21,6 +21,9 @@ export default component$(() => {
           <li>
             <Link href="/pokemon/list-csr/">CSR</Link>
           </li>
+          <li>
+            <Link href="/counter/">Counter</Link>
+          </li>
         </ul>
       </div>
     </header>

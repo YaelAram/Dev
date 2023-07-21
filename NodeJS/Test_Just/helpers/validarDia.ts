@@ -10,7 +10,8 @@ const esValido = (c1: Clase, c2: Clase): boolean => {
     c1.inicio.isBetween(c2.inicio, c2.fin, null, "()") ||
     c1.fin.isBetween(c2.inicio, c2.fin, null, "()") ||
     c2.inicio.isBetween(c1.inicio, c1.fin, null, "()") ||
-    c2.fin.isBetween(c1.inicio, c1.fin, null, "()")
+    c2.fin.isBetween(c1.inicio, c1.fin, null, "()") ||
+    (c1.inicio.isSame(c2.inicio) && c1.fin.isSame(c2.fin))
   );
 };
 

@@ -1,21 +1,21 @@
-import { $, component$, useSignal } from "@builder.io/qwik";
-import { Link, type DocumentHead, useNavigate } from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
+import { Link, type DocumentHead } from "@builder.io/qwik-city";
+
+import { usePokemonGame } from "~/hooks/usePokemonGame";
+
 import { PokemonImage } from "~/components/pokemon/PokemonImage";
 
 export default component$(() => {
-  const pokemonId = useSignal<number>(1);
-  const isBackMode = useSignal<boolean>(false);
-  const isVisible = useSignal<boolean>(true);
-  const nav = useNavigate();
-
-  const changePokemonId = $((value: number): void => {
-    if (pokemonId.value + value < 1 || pokemonId.value + value > 1010) return;
-    pokemonId.value += value;
-  });
-
-  const goToPokemonInfo = $(
-    async () => await nav(`/pokemon-info/${pokemonId.value}/`)
-  );
+  const {
+    isBackMode,
+    isVisible,
+    isVisibleTitleBtn,
+    nextPokemon,
+    pokemonId,
+    prevPokemon,
+    toggleBackMode,
+    toggleVisible,
+  } = usePokemonGame();
 
   return (
     <>
@@ -29,32 +29,17 @@ export default component$(() => {
         />
       </Link>
       <div class="mt-2">
-        <button
-          onClick$={() => changePokemonId(-1)}
-          class="btn btn-primary mr-2"
-        >
+        <button onClick$={prevPokemon} class="btn btn-primary mr-2">
           Anterior
         </button>
-        <button
-          onClick$={() => changePokemonId(+1)}
-          class="btn btn-primary mr-2"
-        >
+        <button onClick$={nextPokemon} class="btn btn-primary mr-2">
           Siguiente
         </button>
-        <button
-          onClick$={() => (isBackMode.value = !isBackMode.value)}
-          class="btn btn-primary mr-2"
-        >
-          Voltear
+        <button onClick$={toggleBackMode} class="btn btn-primary mr-2">
+          Girar
         </button>
-        <button
-          onClick$={() => (isVisible.value = !isVisible.value)}
-          class="btn btn-primary mr-2"
-        >
-          {isVisible.value ? "Ocultar" : "Revelar"}
-        </button>
-        <button onClick$={goToPokemonInfo} class="btn btn-primary">
-          Mas...
+        <button onClick$={toggleVisible} class="btn btn-primary mr-2">
+          {isVisibleTitleBtn}
         </button>
       </div>
     </>

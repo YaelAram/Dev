@@ -1,8 +1,14 @@
-import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useComputed$,
+  useSignal,
+  useTask$,
+} from "@builder.io/qwik";
 import { Loader } from "../shared/loader/loader";
 
 interface Props {
-  id: number;
+  id: number | string;
   backImage?: boolean;
   size?: number;
   isVisible?: boolean;
@@ -18,6 +24,18 @@ export const PokemonImage = component$(
       imageLoaded.value = false;
     });
 
+    const imageUrl = useComputed$(() => {
+      return backImage
+        ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/${id}.png`
+        : `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+    });
+
+    const handleError = $(({ target }: ErrorEvent) => {
+      const imgItem = target as HTMLImageElement;
+      imgItem.src =
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png";
+    });
+
     return (
       <div
         class="flex items-center justify-center"
@@ -25,13 +43,12 @@ export const PokemonImage = component$(
       >
         {imageLoaded.value ? undefined : <Loader />}
         <img
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-            backImage ? "back/" : ""
-          }${id}.png`}
+          src={imageUrl.value}
           alt="Pokemon Sprite"
           width={size}
           height={size}
           onLoad$={() => (imageLoaded.value = true)}
+          onError$={handleError}
           class={[
             "pokemon-image",
             {

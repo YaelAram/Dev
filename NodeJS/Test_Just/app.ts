@@ -1,11 +1,9 @@
 import product from "just-cartesian-product";
 
-import { clases, programacionWeb, redesComputadoras } from "./data/clases";
+import { clases } from "./data/clases";
 import { Clase } from "./interfaces/clase";
 
 import { validarHorarios, mostrarHorarios } from "./helpers";
 
-let horarios: Clase[][] = product(clases);
-
-horarios = validarHorarios(horarios);
+const horarios: Clase[][] = validarHorarios(product(clases));
 mostrarHorarios(horarios);
