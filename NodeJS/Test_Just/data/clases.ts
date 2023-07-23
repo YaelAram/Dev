@@ -60,7 +60,7 @@ const programacionWeb: Clase[] = [
     fin: dayjs({ years: 2024, months: 7, day: 20, hours: 17, minutes: 0 }),
     tipo: "2-veces",
     cupo: 60,
-    dias: LunMie,
+    dias: MarJue,
   },
 ];
 

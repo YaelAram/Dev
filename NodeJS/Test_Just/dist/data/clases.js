@@ -53,7 +53,7 @@ const programacionWeb = [
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 17, minutes: 0 }),
         tipo: "2-veces",
         cupo: 60,
-        dias: clase_1.LunMie,
+        dias: clase_1.MarJue,
     },
 ];
 const redesComputadoras = [
