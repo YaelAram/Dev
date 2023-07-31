@@ -24,7 +24,6 @@ export interface Clase {
   grupo: string;
   inicio: Dayjs;
   fin: Dayjs;
-  tipo: "3-veces" | "2-veces";
   cupo: number;
   dias: Dias[];
 }

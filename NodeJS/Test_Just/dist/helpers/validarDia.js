@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.validarHorarios = void 0;
 const isBetween_1 = __importDefault(require("dayjs/plugin/isBetween"));
 const dayjs_1 = __importDefault(require("dayjs"));
+const clase_1 = require("../interfaces/clase");
 dayjs_1.default.extend(isBetween_1.default);
 const esValido = (c1, c2) => {
     return (c1.inicio.isBetween(c2.inicio, c2.fin, null, "()") ||
@@ -23,9 +24,16 @@ const validarDia = (dia) => {
 };
 const validarHorarios = (horarios) => {
     return horarios.filter((horario) => {
-        const clasesTipo2 = horario.filter((clase) => clase.tipo === "2-veces");
-        const clasesTipo3 = horario.filter((clase) => clase.tipo === "3-veces");
-        return validarDia(clasesTipo2) && validarDia(clasesTipo3);
+        const clasesLunes = horario.filter((clase) => clase.dias.includes(clase_1.Dias.LUNES));
+        const clasesMartes = horario.filter((clase) => clase.dias.includes(clase_1.Dias.MARTES));
+        const clasesMiercoles = horario.filter((clase) => clase.dias.includes(clase_1.Dias.MIERCOLES));
+        const clasesJueves = horario.filter((clase) => clase.dias.includes(clase_1.Dias.JUEVES));
+        const clasesViernes = horario.filter((clase) => clase.dias.includes(clase_1.Dias.VIERNES));
+        return (validarDia(clasesLunes) &&
+            validarDia(clasesMartes) &&
+            validarDia(clasesMiercoles) &&
+            validarDia(clasesJueves) &&
+            validarDia(clasesViernes));
     });
 };
 exports.validarHorarios = validarHorarios;

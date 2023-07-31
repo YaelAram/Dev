@@ -1,0 +1,33 @@
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 10px;
+}
+
+.filters > div {
+  display: flex;
+  gap: 1rem;
+}
+
+input {
+  padding: 0.2rem;
+}
+
+.price-box {
+  width: 40px;
+  text-align: center;
+  font-size: larger;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}

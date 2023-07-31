@@ -1,7 +1,7 @@
 import isBetween from "dayjs/plugin/isBetween";
 import dayjs from "dayjs";
 
-import { Clase } from "../interfaces/clase";
+import { Clase, Dias, Viernes } from "../interfaces/clase";
 
 dayjs.extend(isBetween);
 
@@ -25,9 +25,28 @@ const validarDia = (dia: Clase[]): boolean => {
 
 export const validarHorarios = (horarios: Clase[][]) => {
   return horarios.filter((horario: Clase[]) => {
-    const clasesTipo2 = horario.filter((clase) => clase.tipo === "2-veces");
-    const clasesTipo3 = horario.filter((clase) => clase.tipo === "3-veces");
+    const clasesLunes = horario.filter((clase) =>
+      clase.dias.includes(Dias.LUNES)
+    );
+    const clasesMartes = horario.filter((clase) =>
+      clase.dias.includes(Dias.MARTES)
+    );
+    const clasesMiercoles = horario.filter((clase) =>
+      clase.dias.includes(Dias.MIERCOLES)
+    );
+    const clasesJueves = horario.filter((clase) =>
+      clase.dias.includes(Dias.JUEVES)
+    );
+    const clasesViernes = horario.filter((clase) =>
+      clase.dias.includes(Dias.VIERNES)
+    );
 
-    return validarDia(clasesTipo2) && validarDia(clasesTipo3);
+    return (
+      validarDia(clasesLunes) &&
+      validarDia(clasesMartes) &&
+      validarDia(clasesMiercoles) &&
+      validarDia(clasesJueves) &&
+      validarDia(clasesViernes)
+    );
   });
 };

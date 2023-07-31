@@ -1,20 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.mostrarHorarios = void 0;
+const clase_1 = require("../interfaces/clase");
 const mostrarHorarios = (horarios) => {
-    const resultados = horarios.map((horario) => {
+    let resultados = horarios.map((horario) => {
         return horario.map(({ nombre, profesor, salon, grupo, inicio, fin, dias, cupo }) => {
             return {
                 nombre,
                 profesor,
                 salon,
                 grupo,
-                inicio: inicio.format("HH:mm"),
-                fin: fin.format("HH:mm"),
+                horario: `${inicio.format("HH:mm")} a ${fin.format("HH:mm")}`,
                 dias: dias.join(","),
+                tipo: dias.includes(clase_1.Dias.MARTES) || dias.includes(clase_1.Dias.JUEVES)
+                    ? "2-dias"
+                    : "3-dias",
                 cupo,
             };
         });
+    });
+    resultados = resultados.map((horario) => {
+        const marJue = horario.filter((clase) => clase.tipo === "2-dias");
+        const lunMieVie = horario.filter((clase) => clase.tipo === "3-dias");
+        marJue.sort((clase1, clase2) => clase1.horario.localeCompare(clase2.horario));
+        lunMieVie.sort((clase1, clase2) => clase1.horario.localeCompare(clase2.horario));
+        return (horario = [...lunMieVie, ...marJue]);
     });
     resultados.forEach((horario, index) => {
         console.log(`\nHorario ${index + 1}\n`);
@@ -23,8 +33,7 @@ const mostrarHorarios = (horarios) => {
             "profesor",
             "grupo",
             "salon",
-            "inicio",
-            "fin",
+            "horario",
             "dias",
             "cupo",
         ]);
