@@ -4,18 +4,18 @@ exports.mostrarHorarios = void 0;
 const clase_1 = require("../interfaces/clase");
 const mostrarHorarios = (horarios) => {
     let resultados = horarios.map((horario) => {
-        return horario.map(({ nombre, profesor, salon, grupo, inicio, fin, dias, cupo }) => {
+        return horario.map(({ nombre, profesor, grupo, inicio, fin, dias }) => {
             return {
                 nombre,
                 profesor,
-                salon,
+                // salon,
                 grupo,
                 horario: `${inicio.format("HH:mm")} a ${fin.format("HH:mm")}`,
                 dias: dias.join(","),
                 tipo: dias.includes(clase_1.Dias.MARTES) || dias.includes(clase_1.Dias.JUEVES)
                     ? "2-dias"
                     : "3-dias",
-                cupo,
+                // cupo,
             };
         });
     });
@@ -32,10 +32,10 @@ const mostrarHorarios = (horarios) => {
             "nombre",
             "profesor",
             "grupo",
-            "salon",
+            //"salon",
             "horario",
             "dias",
-            "cupo",
+            //"cupo",
         ]);
     });
 };

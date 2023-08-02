@@ -20,10 +20,10 @@ export const Viernes: Dias[] = [Dias.VIERNES];
 export interface Clase {
   nombre: string;
   profesor: string;
-  salon: string;
+  salon?: string;
   grupo: string;
   inicio: Dayjs;
   fin: Dayjs;
-  cupo: number;
+  cupo?: number;
   dias: Dias[];
 }

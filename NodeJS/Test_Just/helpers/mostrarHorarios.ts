@@ -2,23 +2,21 @@ import { Clase, Dias } from "../interfaces/clase";
 
 export const mostrarHorarios = (horarios: Clase[][]): void => {
   let resultados = horarios.map((horario) => {
-    return horario.map(
-      ({ nombre, profesor, salon, grupo, inicio, fin, dias, cupo }) => {
-        return {
-          nombre,
-          profesor,
-          salon,
-          grupo,
-          horario: `${inicio.format("HH:mm")} a ${fin.format("HH:mm")}`,
-          dias: dias.join(","),
-          tipo:
-            dias.includes(Dias.MARTES) || dias.includes(Dias.JUEVES)
-              ? "2-dias"
-              : "3-dias",
-          cupo,
-        };
-      }
-    );
+    return horario.map(({ nombre, profesor, grupo, inicio, fin, dias }) => {
+      return {
+        nombre,
+        profesor,
+        // salon,
+        grupo,
+        horario: `${inicio.format("HH:mm")} a ${fin.format("HH:mm")}`,
+        dias: dias.join(","),
+        tipo:
+          dias.includes(Dias.MARTES) || dias.includes(Dias.JUEVES)
+            ? "2-dias"
+            : "3-dias",
+        // cupo,
+      };
+    });
   });
 
   resultados = resultados.map((horario) => {
@@ -41,10 +39,10 @@ export const mostrarHorarios = (horarios: Clase[][]): void => {
       "nombre",
       "profesor",
       "grupo",
-      "salon",
+      //"salon",
       "horario",
       "dias",
-      "cupo",
+      //"cupo",
     ]);
   });
 };
