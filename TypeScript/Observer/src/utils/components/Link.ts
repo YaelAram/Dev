@@ -1,6 +1,6 @@
 import { createElement, navigate } from "../helpers";
 
-export class Link extends HTMLElement {
+export class LinkElement extends HTMLElement {
   private a: HTMLAnchorElement;
   private handleClick: (evt: MouseEvent) => void;
 
@@ -49,3 +49,18 @@ export class Link extends HTMLElement {
     this.a.removeEventListener("click", this.handleClick);
   }
 }
+
+interface params {
+  to: string;
+  text: string;
+  target?: string;
+}
+
+export const Link = ({ to, text, target = "_self" }: params) => {
+  const div = createElement<HTMLDivElement>({
+    tag: "div",
+    innerHTML: `<link-nav to='${to}' text='${text}' target='${target}'></link-nav>`,
+  });
+
+  return div.firstChild!;
+};

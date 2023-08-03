@@ -15,8 +15,12 @@ export class Observable<T> {
     return this.state;
   }
 
-  subscribe(observer: Observer<T>) {
-    this.observers.push(observer);
+  subscribe(...observer: Observer<T>[]) {
+    this.observers = this.observers.concat(observer);
+  }
+
+  unsubscribreAll() {
+    this.observers = [];
   }
 
   updateState(newState: T) {

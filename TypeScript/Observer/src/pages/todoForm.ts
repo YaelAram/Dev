@@ -1,39 +1,48 @@
-import { Observable, Observer } from "../classes";
-import { createElement } from "../helpers";
-import { KEY_STORE, TodosType } from "../context/todos";
+import { Link, Observable, Observer, addStyles, createElement } from "../utils";
+
+import { KEY_STORE, TodosType } from "../context";
+import { Form, TodoCounter } from "../components";
+import {
+  submitHandler,
+  totalObserverHandler,
+  ulObserverHandler,
+} from "../helpers/todoForm";
+
 import styles from "../style.css?inline";
-import { Form } from "./Form";
 
 export class ToDoForm extends HTMLElement {
   private state: Observable<string[]>;
   private context: TodosType;
 
   private form: HTMLFormElement;
-  private p: HTMLParagraphElement;
+  private input: HTMLInputElement;
+  private span: HTMLSpanElement;
   private ul: HTMLUListElement;
-  private link: HTMLDivElement;
+
+  private eventHandlers: Map<string, any> = new Map();
 
   constructor() {
     super();
     this.state = new Observable<string[]>([], KEY_STORE);
 
     const shadow = this.attachShadow({ mode: "open" });
-    shadow.append(
-      createElement<HTMLStyleElement>({ tag: "style", textContent: styles })
-    );
+    shadow.append(addStyles(styles));
 
-    this.form = createElement<HTMLFormElement>({ tag: "form" });
-    this.p = createElement<HTMLParagraphElement>({
-      tag: "p",
-      innerText: "Total: ",
-    });
+    const { form, input } = Form();
+    this.form = form;
+    this.input = input;
+
+    const { p, span } = TodoCounter();
+    this.span = span;
+
     this.ul = createElement<HTMLUListElement>({ tag: "ul" });
-    this.link = createElement<HTMLDivElement>({
-      tag: "div",
-      innerHTML: "<link-nav to='/todos' text='TODO-LIST'></link-nav>",
-    });
 
-    shadow.append(this.form, this.p, this.ul, this.link.firstChild ?? "");
+    shadow.append(
+      this.form,
+      p,
+      this.ul,
+      Link({ to: "/todos", text: "TODO-LIST" })
+    );
   }
 
   public setState(context: TodosType): void {
@@ -42,31 +51,21 @@ export class ToDoForm extends HTMLElement {
   }
 
   connectedCallback() {
-    const { input } = Form(this.form);
+    const totalObserver = new Observer<string[]>(
+      totalObserverHandler(this.span)
+    );
+    const ulObserver = new Observer<string[]>(ulObserverHandler(this.ul));
 
-    const span = createElement<HTMLSpanElement>({ tag: "span" });
-    this.p.append(span);
+    this.state.subscribe(totalObserver, ulObserver);
 
-    const totalObserver = new Observer<string[]>((todos) => {
-      span.innerText = String(todos.length);
-    });
-
-    const ulObserver = new Observer<string[]>((todos) => {
-      const todosItems = todos.map((todo) => `<li>${todo}</li>`).join("");
-      this.ul.innerHTML = todosItems;
-    });
-
-    this.state.subscribe(totalObserver);
-    this.state.subscribe(ulObserver);
-
-    this.form.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-      this.state.updateState([...this.state.getState(), input.value]);
-      input.value = "";
-    });
+    const handler = submitHandler(this.input, this.state);
+    this.eventHandlers.set("form", handler);
+    this.form.addEventListener("submit", handler);
   }
 
   disconnectedCallback() {
+    this.state.unsubscribreAll();
     this.context.setState(this.state.getState());
+    this.form.removeEventListener("submit", this.eventHandlers.get("form"));
   }
 }

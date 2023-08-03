@@ -1,4 +1,4 @@
-import { getInstance } from "../classes/State";
+import { getInstance } from "../utils";
 
 export const KEY_STORE = "TODOS";
 

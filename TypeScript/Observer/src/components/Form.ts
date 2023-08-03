@@ -1,7 +1,9 @@
-import { createElement } from "../helpers";
+import { createElement } from "../utils";
 
-export const Form = (form: HTMLFormElement) => {
+export const Form = () => {
   const INPUT_ID: string = "title";
+
+  const form = createElement<HTMLFormElement>({ tag: "form" });
 
   const label = createElement<HTMLLabelElement>({
     tag: "label",
@@ -22,5 +24,5 @@ export const Form = (form: HTMLFormElement) => {
 
   form.append(label, input, button);
 
-  return { label, input, button };
+  return { form, label, input, button };
 };
