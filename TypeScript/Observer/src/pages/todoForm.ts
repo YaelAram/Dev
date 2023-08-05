@@ -1,6 +1,6 @@
 import { Link, Observable, Observer, addStyles, createElement } from "../utils";
 
-import { KEY_STORE, TodosType } from "../context";
+import { state } from "../context";
 import { Form, TodoCounter } from "../components";
 import {
   submitHandler,
@@ -12,7 +12,6 @@ import styles from "../style.css?inline";
 
 export class ToDoForm extends HTMLElement {
   private state: Observable<string[]>;
-  private context: TodosType;
 
   private form: HTMLFormElement;
   private input: HTMLInputElement;
@@ -23,7 +22,7 @@ export class ToDoForm extends HTMLElement {
 
   constructor() {
     super();
-    this.state = new Observable<string[]>([], KEY_STORE);
+    this.state = state;
 
     const shadow = this.attachShadow({ mode: "open" });
     shadow.append(addStyles(styles));
@@ -45,18 +44,18 @@ export class ToDoForm extends HTMLElement {
     );
   }
 
-  public setState(context: TodosType): void {
-    this.context = context;
-    this.state.updateState(context.getValue());
-  }
-
   connectedCallback() {
     const totalObserver = new Observer<string[]>(
       totalObserverHandler(this.span)
     );
     const ulObserver = new Observer<string[]>(ulObserverHandler(this.ul));
 
-    this.state.subscribe(totalObserver, ulObserver);
+    this.state.subscribe({
+      key: "total-observer-form",
+      observer: totalObserver,
+    });
+    this.state.subscribe({ key: "ul-observer-form", observer: ulObserver });
+    this.state.init();
 
     const handler = submitHandler(this.input, this.state);
     this.eventHandlers.set("form", handler);
@@ -64,8 +63,8 @@ export class ToDoForm extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.state.unsubscribreAll();
-    this.context.setState(this.state.getState());
+    this.state.unsubscribre("total-observer-form");
+    this.state.unsubscribre("ul-observer-form");
     this.form.removeEventListener("submit", this.eventHandlers.get("form"));
   }
 }

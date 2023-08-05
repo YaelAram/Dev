@@ -1,7 +1,7 @@
 import { Observable, Observer, addStyles, createElement, Link } from "../utils";
 
 import { TodoCounter } from "../components";
-import { KEY_STORE, TodosType } from "../context";
+import { state } from "../context";
 
 import { totalObserverHandler } from "../helpers/todoForm";
 import { ulObserverHandler } from "../helpers/todoList";
@@ -10,14 +10,13 @@ import styles from "../style.css?inline";
 
 export class ToDoList extends HTMLElement {
   private state: Observable<string[]>;
-  private context: TodosType;
 
   private span: HTMLSpanElement;
   private ul: HTMLUListElement;
 
   constructor() {
     super();
-    this.state = new Observable<string[]>([], KEY_STORE);
+    this.state = state;
 
     const shadow = this.attachShadow({ mode: "open" });
     shadow.append(addStyles(styles));
@@ -30,11 +29,6 @@ export class ToDoList extends HTMLElement {
     shadow.append(p, this.ul, Link({ to: "/", text: "TODO-LIST" }));
   }
 
-  public setState(context: TodosType): void {
-    this.context = context;
-    this.state.updateState(context.getValue());
-  }
-
   connectedCallback() {
     const totalObserver = new Observer<string[]>(
       totalObserverHandler(this.span)
@@ -43,10 +37,16 @@ export class ToDoList extends HTMLElement {
       ulObserverHandler(this.ul, this.state)
     );
 
-    this.state.subscribe(totalObserver, ulObserver);
+    this.state.subscribe({
+      key: "total-observer-list",
+      observer: totalObserver,
+    });
+    this.state.subscribe({ key: "ul-observer-list", observer: ulObserver });
+    this.state.init();
   }
 
   disconnectedCallback() {
-    this.context.setState(this.state.getState());
+    this.state.unsubscribre("total-observer-list");
+    this.state.unsubscribre("ul-observer-list");
   }
 }

@@ -1,6 +1,6 @@
 import product from "just-cartesian-product";
 
-import { clases } from "./data/clasesAye";
+import { clases } from "./data/clases";
 import { Clase } from "./interfaces/clase";
 
 import { validarHorarios, mostrarHorarios } from "./helpers";

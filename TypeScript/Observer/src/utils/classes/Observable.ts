@@ -2,12 +2,12 @@ import { Observer } from "./";
 
 export class Observable<T> {
   private state: T;
-  private observers: Observer<T>[];
   private localStorageKey: string;
+  private observers: Map<string, Observer<T>>;
 
   constructor(state: T, localStorageKey: string) {
     this.state = state;
-    this.observers = [];
+    this.observers = new Map<string, Observer<T>>();
     this.localStorageKey = localStorageKey;
   }
 
@@ -15,12 +15,20 @@ export class Observable<T> {
     return this.state;
   }
 
-  subscribe(...observer: Observer<T>[]) {
-    this.observers = this.observers.concat(observer);
+  getSubscribers() {
+    return this.observers;
   }
 
-  unsubscribreAll() {
-    this.observers = [];
+  subscribe({ key, observer }: { key: string; observer: Observer<T> }) {
+    this.observers.set(key, observer);
+  }
+
+  unsubscribre(key: string) {
+    this.observers.delete(key);
+  }
+
+  init() {
+    this.observers.forEach((observer) => observer.notify(this.state));
   }
 
   updateState(newState: T) {

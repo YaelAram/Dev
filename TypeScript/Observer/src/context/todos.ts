@@ -1,12 +1,8 @@
-import { getInstance } from "../utils";
+import { Observable } from "../utils";
 
 export const KEY_STORE = "TODOS";
 
-const storedState = JSON.parse(localStorage.getItem(KEY_STORE) ?? "[]");
-
-export const todosContext = getInstance<string[]>(storedState);
-
-export interface TodosType {
-  getValue: () => string[];
-  setState: (newState: string[]) => void;
-}
+const storedState: string[] = JSON.parse(
+  localStorage.getItem(KEY_STORE) ?? "[]"
+);
+export const state = new Observable<string[]>(storedState, KEY_STORE);

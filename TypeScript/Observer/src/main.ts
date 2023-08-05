@@ -1,8 +1,6 @@
 import { LinkElement, createRouter } from "./utils";
 import { ToDoForm, ToDoList } from "./pages";
 
-import { todosContext, TodosType } from "./context";
-
 customElements.define("todo-form", ToDoForm);
 customElements.define("todo-list", ToDoList);
 customElements.define("link-nav", LinkElement);
@@ -19,4 +17,4 @@ const routes = [
   },
 ];
 
-createRouter<TodosType>(routes, app, todosContext);
+createRouter(routes, app);

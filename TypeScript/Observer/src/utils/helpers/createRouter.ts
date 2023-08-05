@@ -6,16 +6,11 @@ export interface Route {
   selector: string;
 }
 
-export const createRouter = <T>(
-  routes: Route[],
-  app: HTMLDivElement,
-  context: T
-) => {
+export const createRouter = (routes: Route[], app: HTMLDivElement) => {
   const changePage = () => {
     const currentPath = getCurrentPath();
     const { selector } = routes.find(({ path }) => path === currentPath)!;
     app.innerHTML = `<${selector}></${selector}>`;
-    document.querySelector<any>(selector)!?.setState(context);
   };
 
   changePage();
