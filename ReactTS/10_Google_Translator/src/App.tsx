@@ -1,11 +1,19 @@
+import { useEffect } from "react";
+
 import { Container, Row, Col, Button, Stack } from "react-bootstrap";
 
-import { useStore } from "./hooks";
-import { LanguageSelector, ArrowsIcon } from "./components";
-import { AUTO_LANG, SelectorType } from "./interfaces";
+import { useDebounce, useStore } from "./hooks";
+import {
+  LanguageSelector,
+  ArrowsIcon,
+  ClipboardIcon,
+  TextArea,
+  SpeakerIcon,
+} from "./components";
+import { AUTO_LANG, SelectorType, VOICE_FOR_LANGUAGE } from "./interfaces";
+import { translate } from "./services/translate";
 
 import "./App.css";
-import { TextArea } from "./components/TextArea";
 
 function App() {
   const {
@@ -20,6 +28,31 @@ function App() {
     changeFromText,
     changeTranslation,
   } = useStore();
+
+  const debouncedFromText = useDebounce(fromText, 500);
+
+  useEffect(() => {
+    if (debouncedFromText === "") return;
+
+    translate({ fromLanguage, toLanguage, text: debouncedFromText })
+      .then((result) => {
+        if (result == null) return;
+        changeTranslation(result);
+      })
+      .catch(() => {
+        changeTranslation("Error");
+      });
+  }, [debouncedFromText, fromLanguage, toLanguage]);
+
+  const handleClipboard = () => {
+    navigator.clipboard.writeText(translation).catch(() => {});
+  };
+
+  const handleSpeak = () => {
+    const utterance = new SpeechSynthesisUtterance(translation);
+    utterance.lang = VOICE_FOR_LANGUAGE[toLanguage];
+    speechSynthesis.speak(utterance);
+  };
 
   return (
     <Container fluid>
@@ -56,12 +89,29 @@ function App() {
               defaultLanguage={toLanguage}
               onChange={changeToLang}
             />
-            <TextArea
-              onChange={changeTranslation}
-              type={SelectorType.TO}
-              value={translation}
-              loading={isLoading}
-            />
+            <div style={{ position: "relative" }}>
+              <TextArea
+                onChange={changeTranslation}
+                type={SelectorType.TO}
+                value={translation}
+                loading={isLoading}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  bottom: 0,
+                  display: "flex",
+                }}
+              >
+                <Button variant="link" onClick={handleClipboard}>
+                  <ClipboardIcon />
+                </Button>
+                <Button variant="link" onClick={handleSpeak}>
+                  <SpeakerIcon />
+                </Button>
+              </div>
+            </div>
           </Stack>
         </Col>
       </Row>

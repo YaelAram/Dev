@@ -4,6 +4,12 @@ export const SUPPORTED_LANG = {
   de: "Deutsch",
 };
 
+export const VOICE_FOR_LANGUAGE = {
+  en: "en-GB",
+  es: "es-MX",
+  de: "de-DE",
+};
+
 export const AUTO_LANG = "auto";
 
 export type Lang = keyof typeof SUPPORTED_LANG;
