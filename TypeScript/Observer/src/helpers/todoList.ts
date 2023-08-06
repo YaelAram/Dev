@@ -1,9 +1,7 @@
-import { Observable, createElement } from "../utils";
+import { StateType } from "../context";
+import { createElement } from "../utils";
 
-export const ulObserverHandler = (
-  ul: HTMLUListElement,
-  state: Observable<string[]>
-) => {
+export const ulObserverHandler = (ul: HTMLUListElement, state: StateType) => {
   return (todos: string[]) => {
     ul.innerHTML = "";
     const todosItems: HTMLElement[] = todos.map((todo) => {
@@ -20,11 +18,14 @@ export const ulObserverHandler = (
         nodes: [span, button],
       });
 
+      li.setAttribute(
+        "style",
+        `view-transition-name: todo-${todo.replaceAll(" ", "-")};`
+      );
+
       const handleClick = () => {
         li.remove();
-        state.updateState(
-          todos.filter((todoToRemove) => todo !== todoToRemove)
-        );
+        state.value = todos.filter((todoToRemove) => todo !== todoToRemove);
       };
 
       button.addEventListener("click", handleClick);

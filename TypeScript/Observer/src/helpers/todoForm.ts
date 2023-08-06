@@ -1,15 +1,12 @@
-import { Observable } from "../utils";
+import { StateType } from "../context";
 
-export const submitHandler = (
-  input: HTMLInputElement,
-  state: Observable<string[]>
-) => {
+export const submitHandler = (input: HTMLInputElement, state: StateType) => {
   return (evt: SubmitEvent) => {
     evt.preventDefault();
 
     const newTodo = input.value.trim();
     if (newTodo) {
-      state.updateState([...state.getState(), input.value]);
+      state.value = [...state.value, input.value];
       input.value = "";
     }
   };
@@ -23,7 +20,15 @@ export const totalObserverHandler = (span: HTMLSpanElement) => {
 
 export const ulObserverHandler = (ul: HTMLUListElement) => {
   return (todos: string[]) => {
-    const todosItems = todos.map((todo) => `<li>${todo}</li>`).join("");
+    const todosItems = todos
+      .map(
+        (todo) =>
+          `<li style="view-transition-name: todo-${todo.replaceAll(
+            " ",
+            "-"
+          )};">${todo}</li>`
+      )
+      .join("");
     ul.innerHTML = todosItems;
   };
 };

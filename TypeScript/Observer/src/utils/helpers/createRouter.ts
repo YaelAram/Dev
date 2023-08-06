@@ -6,11 +6,21 @@ export interface Route {
   selector: string;
 }
 
+const updatePage = (app: HTMLDivElement, selector: string) => {
+  app.innerHTML = `<${selector}></${selector}>`;
+};
+
 export const createRouter = (routes: Route[], app: HTMLDivElement) => {
   const changePage = () => {
     const currentPath = getCurrentPath();
     const { selector } = routes.find(({ path }) => path === currentPath)!;
-    app.innerHTML = `<${selector}></${selector}>`;
+
+    if (!document.startViewTransition) {
+      updatePage(app, selector);
+      return;
+    }
+
+    document.startViewTransition(() => updatePage(app, selector));
   };
 
   changePage();

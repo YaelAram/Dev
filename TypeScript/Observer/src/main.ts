@@ -1,6 +1,8 @@
 import { LinkElement, createRouter } from "./utils";
 import { ToDoForm, ToDoList } from "./pages";
 
+import "./main.css";
+
 customElements.define("todo-form", ToDoForm);
 customElements.define("todo-list", ToDoList);
 customElements.define("link-nav", LinkElement);

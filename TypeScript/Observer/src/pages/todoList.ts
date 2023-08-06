@@ -1,7 +1,7 @@
-import { Observable, Observer, addStyles, createElement, Link } from "../utils";
+import { addStyles, createElement, Link } from "../utils";
 
 import { TodoCounter } from "../components";
-import { state } from "../context";
+import { state, StateType } from "../context";
 
 import { totalObserverHandler } from "../helpers/todoForm";
 import { ulObserverHandler } from "../helpers/todoList";
@@ -9,7 +9,8 @@ import { ulObserverHandler } from "../helpers/todoList";
 import styles from "../style.css?inline";
 
 export class ToDoList extends HTMLElement {
-  private state: Observable<string[]>;
+  private state: StateType;
+  private subscribers: string[] = [];
 
   private span: HTMLSpanElement;
   private ul: HTMLUListElement;
@@ -26,27 +27,25 @@ export class ToDoList extends HTMLElement {
 
     this.ul = createElement<HTMLUListElement>({ tag: "ul" });
 
-    shadow.append(p, this.ul, Link({ to: "/", text: "TODO-LIST" }));
+    const div = createElement<HTMLDivElement>({ tag: "div" });
+    div.append(p, this.ul, Link({ to: "/", text: "TODO-LIST" }));
+
+    shadow.append(div);
   }
 
   connectedCallback() {
-    const totalObserver = new Observer<string[]>(
-      totalObserverHandler(this.span)
-    );
-    const ulObserver = new Observer<string[]>(
-      ulObserverHandler(this.ul, this.state)
-    );
+    const totalSubscribe = "total-observer-list";
+    const ulSubscribe = "ul-observer-list";
 
-    this.state.subscribe({
-      key: "total-observer-list",
-      observer: totalObserver,
-    });
-    this.state.subscribe({ key: "ul-observer-list", observer: ulObserver });
-    this.state.init();
+    this.subscribers.push(totalSubscribe, ulSubscribe);
+
+    this.state.subscribe(totalSubscribe, totalObserverHandler(this.span));
+    this.state.subscribe(ulSubscribe, ulObserverHandler(this.ul, this.state));
   }
 
   disconnectedCallback() {
-    this.state.unsubscribre("total-observer-list");
-    this.state.unsubscribre("ul-observer-list");
+    this.subscribers.forEach((subscriber) =>
+      this.state.unsubscribe(subscriber)
+    );
   }
 }

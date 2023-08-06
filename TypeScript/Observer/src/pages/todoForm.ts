@@ -1,6 +1,6 @@
-import { Link, Observable, Observer, addStyles, createElement } from "../utils";
+import { Link, createElement } from "../utils";
 
-import { state } from "../context";
+import { state, StateType } from "../context";
 import { Form, TodoCounter } from "../components";
 import {
   submitHandler,
@@ -8,10 +8,9 @@ import {
   ulObserverHandler,
 } from "../helpers/todoForm";
 
-import styles from "../style.css?inline";
-
 export class ToDoForm extends HTMLElement {
-  private state: Observable<string[]>;
+  private state: StateType;
+  private subscribers: string[] = [];
 
   private form: HTMLFormElement;
   private input: HTMLInputElement;
@@ -25,7 +24,6 @@ export class ToDoForm extends HTMLElement {
     this.state = state;
 
     const shadow = this.attachShadow({ mode: "open" });
-    shadow.append(addStyles(styles));
 
     const { form, input } = Form();
     this.form = form;
@@ -45,17 +43,13 @@ export class ToDoForm extends HTMLElement {
   }
 
   connectedCallback() {
-    const totalObserver = new Observer<string[]>(
-      totalObserverHandler(this.span)
-    );
-    const ulObserver = new Observer<string[]>(ulObserverHandler(this.ul));
+    const totalSubscribe = "total-observer-form";
+    const ulSubscribe = "ul-observer-form";
 
-    this.state.subscribe({
-      key: "total-observer-form",
-      observer: totalObserver,
-    });
-    this.state.subscribe({ key: "ul-observer-form", observer: ulObserver });
-    this.state.init();
+    this.subscribers.push(totalSubscribe, ulSubscribe);
+
+    this.state.subscribe(totalSubscribe, totalObserverHandler(this.span));
+    this.state.subscribe(ulSubscribe, ulObserverHandler(this.ul));
 
     const handler = submitHandler(this.input, this.state);
     this.eventHandlers.set("form", handler);
@@ -63,8 +57,9 @@ export class ToDoForm extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.state.unsubscribre("total-observer-form");
-    this.state.unsubscribre("ul-observer-form");
+    this.subscribers.forEach((subscriber) =>
+      this.state.unsubscribe(subscriber)
+    );
     this.form.removeEventListener("submit", this.eventHandlers.get("form"));
   }
 }
