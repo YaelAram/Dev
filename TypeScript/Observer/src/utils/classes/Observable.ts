@@ -1,4 +1,4 @@
-import { Observer } from "./";
+export type Observer<T> = (state: T) => Promise<void>;
 
 export class Observable<T> {
   private state: T;
@@ -21,19 +21,21 @@ export class Observable<T> {
 
   subscribe({ key, observer }: { key: string; observer: Observer<T> }) {
     this.observers.set(key, observer);
+    observer(this.state);
   }
 
   unsubscribre(key: string) {
     this.observers.delete(key);
   }
 
-  init() {
-    this.observers.forEach((observer) => observer.notify(this.state));
-  }
-
   updateState(newState: T) {
     this.state = newState;
     localStorage.setItem(this.localStorageKey, JSON.stringify(newState));
-    this.observers.forEach((observer) => observer.notify(this.state));
+    const tasks = Array.from(this.observers.values()).map((observer) => {
+      return new Promise<void>(() => {
+        observer(newState);
+      });
+    });
+    Promise.all(tasks);
   }
 }

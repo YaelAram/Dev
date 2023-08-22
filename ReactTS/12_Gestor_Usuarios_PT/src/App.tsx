@@ -1,12 +1,12 @@
 import "./App.css";
-import { Controllers, ListOfUsers } from "./components";
+import { Controllers, Users } from "./components";
 
 function App() {
   return (
     <main>
       <h1>Prueba Tecnica</h1>
       <Controllers />
-      <ListOfUsers />
+      <Users />
     </main>
   );
 }

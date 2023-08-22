@@ -1,3 +1,4 @@
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { createContext, useEffect, useMemo, useReducer, useRef } from "react";
 import {
   UsersContextState,
@@ -6,7 +7,7 @@ import {
   usersReducer,
 } from "../helpers";
 import { Action, Sort } from "../interfaces";
-import { User, UserKeys, getUsers } from "../services";
+import { User, UserKeys, UsersInfo, getUsers } from "../services";
 
 export const UsersContext = createContext<UsersContextState>(initialContext);
 
@@ -18,14 +19,18 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
   const [state, dispatch] = useReducer(usersReducer, initialState);
   const initialUsers = useRef<User[]>([]);
 
+  const { isLoading, isError, data, fetchNextPage, hasNextPage } =
+    useInfiniteQuery<UsersInfo>(["users"], getUsers, {
+      getNextPageParam: (lastPage) => lastPage.nextCursor,
+    });
+
   useEffect(() => {
-    getUsers()
-      .then((usersData) => {
-        dispatch({ type: Action.LOAD_USERS, payload: usersData });
-        initialUsers.current = usersData;
-      })
-      .catch((error) => console.error(error));
-  }, []);
+    if (data) {
+      const users: User[] = data.pages?.flatMap((page) => page.users) ?? [];
+      initialUsers.current = users;
+      dispatch({ type: Action.LOAD_USERS, payload: users });
+    }
+  }, [data]);
 
   const countries = useMemo<string[]>(() => {
     const countrySet = new Set(state.users.map(({ country }) => country));
@@ -52,6 +57,10 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
     dispatch({ type: Action.CHANGE_SORTING, payload: sort });
   };
 
+  const nextPage = () => {
+    fetchNextPage();
+  };
+
   const filteredUsers = useMemo(() => {
     return state.filterCountry === "all"
       ? state.users
@@ -72,6 +81,9 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
       value={{
         countries,
         filterCountry: state.filterCountry,
+        hasNextPage: hasNextPage,
+        isLoading,
+        isError,
         showColors: state.showColors,
         sorting: state.sorting,
         users: sortedUsers,
@@ -80,6 +92,7 @@ export const UsersProvider: React.FC<Props> = ({ children }) => {
         restoreInitialUsers,
         toggleShowColors,
         deleteUser,
+        nextPage,
       }}
     >
       {children}

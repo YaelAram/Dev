@@ -5,7 +5,6 @@ import { Sort } from "../interfaces";
 export const ListOfUsers = () => {
   const { users, showColors, deleteUser, changeSort } =
     useContext(UsersContext);
-
   return (
     <table className="users-table">
       <thead>

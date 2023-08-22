@@ -4,6 +4,9 @@ import { User } from "../services";
 export interface UsersContextState {
   countries: string[];
   filterCountry: string;
+  hasNextPage?: boolean;
+  isLoading: boolean;
+  isError: boolean;
   showColors: boolean;
   sorting: Sort;
   users: User[];
@@ -12,11 +15,15 @@ export interface UsersContextState {
   restoreInitialUsers: () => void;
   toggleShowColors: () => void;
   deleteUser: (id: string) => void;
+  nextPage: () => void;
 }
 
 export const initialContext: UsersContextState = {
   countries: [],
   filterCountry: "all",
+  hasNextPage: true,
+  isLoading: false,
+  isError: false,
   showColors: false,
   sorting: Sort.NONE,
   users: [],
@@ -25,4 +32,5 @@ export const initialContext: UsersContextState = {
   restoreInitialUsers: () => {},
   toggleShowColors: () => {},
   deleteUser: () => {},
+  nextPage: () => {},
 };

@@ -12,9 +12,20 @@ export interface User {
 
 export type UserKeys = keyof User;
 
-export const getUsers = async (): Promise<User[]> => {
+export interface UsersInfo {
+  nextCursor?: number;
+  users: User[];
+}
+
+export const getUsers = async ({
+  pageParam = 1,
+}: {
+  pageParam?: number;
+}): Promise<UsersInfo> => {
   const params = new URLSearchParams();
-  params.append("results", "100");
+  params.append("results", "10");
+  params.append("seed", "yaelbcby");
+  params.append("page", String(pageParam));
 
   const resp = await fetch(`${baseUrl}?${params.toString()}`);
 
@@ -22,7 +33,7 @@ export const getUsers = async (): Promise<User[]> => {
 
   const data: UsersResponse = await resp.json();
 
-  return data.results.map(({ login, name, location, picture }) => {
+  const users = data.results.map(({ login, name, location, picture }) => {
     return {
       id: login.uuid,
       name: name.first,
@@ -31,4 +42,11 @@ export const getUsers = async (): Promise<User[]> => {
       picture: picture.thumbnail,
     };
   });
+
+  const currentPage = Number(data.info.page);
+
+  return {
+    nextCursor: currentPage > 3 ? undefined : currentPage + 1,
+    users,
+  };
 };

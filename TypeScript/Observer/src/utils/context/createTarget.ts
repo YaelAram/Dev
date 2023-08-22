@@ -14,7 +14,12 @@ export const createTargetValue = <T>(data: T, storeKey: string) => {
     },
     notify(newState: T) {
       localStorage.setItem(this.localStorageKey, JSON.stringify(newState));
-      this.observers.forEach((observer) => observer(newState));
+      const tasks = Array.from(this.observers.values()).map((observer) => {
+        return new Promise<void>(() => {
+          observer(newState);
+        });
+      });
+      Promise.all(tasks);
     },
   };
 };
@@ -34,7 +39,12 @@ export const createTarget = <T, U>(data: T, storeKey: string, keys: U[]) => {
     },
     notify(newState: T) {
       localStorage.setItem(this.localStorageKey, JSON.stringify(newState));
-      this.observers.forEach((observer) => observer(newState));
+      const tasks = Array.from(this.observers.values()).map((observer) => {
+        return new Promise<void>(() => {
+          observer(newState);
+        });
+      });
+      Promise.all(tasks);
     },
   };
 };

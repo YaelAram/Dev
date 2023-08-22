@@ -1,9 +1,10 @@
-import { getCurrentPath } from "./getCurrentPath";
 import { NAVIGATION_EVENT } from "./";
+import { getCurrentPath } from "./getCurrentPath";
 
 export interface Route {
   path: string;
   selector: string;
+  title: string;
 }
 
 const updatePage = (app: HTMLDivElement, selector: string) => {
@@ -13,7 +14,10 @@ const updatePage = (app: HTMLDivElement, selector: string) => {
 export const createRouter = (routes: Route[], app: HTMLDivElement) => {
   const changePage = () => {
     const currentPath = getCurrentPath();
-    const { selector } = routes.find(({ path }) => path === currentPath)!;
+    const { selector, title } = routes.find(
+      ({ path }) => path === currentPath
+    )!;
+    document.title = title;
 
     if (!document.startViewTransition) {
       updatePage(app, selector);
