@@ -47,6 +47,10 @@ int main(){
   scanf("%lf", &numero5);
   printf("Numero 5 (double): %.9f\n", numero5); // Para mostrar mas de 6 decimales
   printf("%f * %.15f = %.15f", PI, numero5, numero5 * PI);
+  // Long Unsigned Int
+  unsigned long int numero6 = 1023;
+  printf("Angulo: %0.2f\n", numero6 * 0.2639296187683284);
+  printf("Voltaje: %.3f\n", numero6 * 0.0048875855327468);
 
   return 0;
 }
