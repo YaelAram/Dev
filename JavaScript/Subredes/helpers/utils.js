@@ -42,6 +42,7 @@ const getAllIPBits = (i, IP_BITS, N) => {
       ...IP_BITS.slice(0, 3),
       `${parseDecToBin(i).padStart(N, "0").padEnd(7, "1")}0`,
     ],
+    [...IP_BITS.slice(0, 3), `${"".padStart(N, "1").padEnd(8, "0")}`],
   ];
 };
 
@@ -56,7 +57,7 @@ export const getIP = (IP_BITS, NS, N) => {
   const table = [];
 
   for (let i = 0; i < NS; i++) {
-    const [idNet, broadcastNet, firstNet, lastNet] = getAllIPBits(
+    const [idNet, broadcastNet, firstNet, lastNet, netMask] = getAllIPBits(
       i,
       IP_BITS,
       N
@@ -67,6 +68,7 @@ export const getIP = (IP_BITS, NS, N) => {
       "Primera IP": parseToIp(firstNet),
       "Ultima IP": parseToIp(lastNet),
       "Bradcast IP": parseToIp(broadcastNet),
+      Mascara: parseToIp(netMask),
     });
   }
 
