@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <main class="flex flex-col flex-center">
+      <h1>Calculo de Subredes</h1>
+      <form class="shadow rounded flex flex-col">
+        <label for="total">Cantidad</label>
+        <input
+          type="number"
+          name="total"
+          id="total"
+          class="rounded"
+          min="0"
+          autocomplete="off"
+        />
+        <label for="ip">IP</label>
+        <input
+          type="text"
+          name="ip"
+          id="ip"
+          class="rounded"
+          autocomplete="off"
+        />
+        <label for="type">Tipo</label>
+        <select name="type" id="type" class="rounded">
+          <option value="subnet">Numero de Subredes</option>
+          <option value="host">Numero de hosts</option>
+        </select>
+        <button type="submit" class="rounded">Calcular</button>
+      </form>
+      <section class="info shadow rounded flex flex-row">
+        <p>IP base: <span id="ip-base"></span></p>
+        <p>Numero de hosts: <span id="num-hosts"></span></p>
+        <p>Numero de subredes: <span id="num-subnet"></span></p>
+        <p>Bits de subred: <span id="bits-subnet"></span></p>
+        <p>Bits de host: <span id="bits-host"></span></p>
+      </section>
+      <section class="shadow rounded">
+        <table>
+          <thead>
+            <tr>
+              <th>ID Red</th>
+              <th>Primera IP</th>
+              <th>Ultima IP</th>
+              <th>IP Bradcast</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
