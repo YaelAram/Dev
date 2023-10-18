@@ -9,12 +9,12 @@ import "./style.css";
 const handleSubmit = (evt) => {
   evt.preventDefault();
 
-  const { total, ip, type } = Object.fromEntries(
+  const { total, ip, type, classType } = Object.fromEntries(
     new FormData(evt.target).entries()
   );
 
-  if (type === "subnet") fromSubnet(+total, ip);
-  else fromHost(+total, ip);
+  if (type === "subnet") fromSubnet(+total, ip, +classType);
+  else fromHost(+total, ip, +classType);
 };
 
 document.querySelector("form").addEventListener("submit", handleSubmit);

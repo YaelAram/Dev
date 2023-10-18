@@ -25,13 +25,14 @@ const bitsHostSpan = document.querySelector("#bits-host");
  * @param {number} hosts
  * @param {number} NS
  * @param {number} N
+ * @param {number} classType
  */
-export const showData = (IP, hosts, NS, N) => {
+export const showData = (IP, hosts, NS, N, classType) => {
   ipSpan.innerText = IP;
   hostsSpan.innerText = hosts;
   numSubnetSpan.innerText = NS;
   bitsSubnetSpan.innerText = N;
-  bitsHostSpan.innerText = 8 - N;
+  bitsHostSpan.innerText = (4 - classType) * 8 - N;
 };
 
 const tbody = document.querySelector("tbody");

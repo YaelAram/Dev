@@ -1,3 +1,4 @@
+import { getAllIPBits } from "./ip.js";
 import { parseDecToBin, parseToIp } from "./parse.js";
 
 /**
@@ -19,31 +20,11 @@ export const getIPBits = (ip) => {
 /**
  *
  * @param {number} N
+ * @param {number} classType
  * @returns { number }
  */
-export const getNumberOfHost = (N) => Math.pow(2, 8 - N) - 2;
-
-/**
- *
- * @param {number} i
- * @param {string[]} IP_BITS
- * @param {number} N
- * @returns {string[][]}
- */
-const getAllIPBits = (i, IP_BITS, N) => {
-  return [
-    [...IP_BITS.slice(0, 3), parseDecToBin(i).padStart(N, "0").padEnd(8, "0")],
-    [...IP_BITS.slice(0, 3), parseDecToBin(i).padStart(N, "0").padEnd(8, "1")],
-    [
-      ...IP_BITS.slice(0, 3),
-      `${parseDecToBin(i).padStart(N, "0").padEnd(7, "0")}1`,
-    ],
-    [
-      ...IP_BITS.slice(0, 3),
-      `${parseDecToBin(i).padStart(N, "0").padEnd(7, "1")}0`,
-    ],
-    [...IP_BITS.slice(0, 3), `${"".padStart(N, "1").padEnd(8, "0")}`],
-  ];
+export const getNumberOfHost = (N, classType) => {
+  return Math.pow(2, (4 - classType) * 8 - N) - 2;
 };
 
 /**
@@ -51,16 +32,18 @@ const getAllIPBits = (i, IP_BITS, N) => {
  * @param {string[]} IP_BITS
  * @param {number} NS
  * @param {number} N
+ * @param {number} classType
  * @returns {any[]}
  */
-export const getIP = (IP_BITS, NS, N) => {
+export const getIP = (IP_BITS, NS, N, classType) => {
   const table = [];
 
   for (let i = 0; i < NS; i++) {
     const [idNet, broadcastNet, firstNet, lastNet, netMask] = getAllIPBits(
       i,
       IP_BITS,
-      N
+      N,
+      classType
     );
 
     table.push({
