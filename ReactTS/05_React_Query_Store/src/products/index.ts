@@ -7,4 +7,5 @@ export { StoreLayout } from "./layout/StoreLayout";
 export { CompleteListPage } from "./pages/CompleteListPage";
 export { MensPage } from "./pages/MensPage";
 export { NewProduct } from "./pages/NewProduct";
+export { ProductPage } from "./pages/ProductPage";
 export { WomensPage } from "./pages/WomensPage";

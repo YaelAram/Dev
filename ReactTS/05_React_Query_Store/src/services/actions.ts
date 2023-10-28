@@ -15,3 +15,9 @@ export const getProducts = async ({ filterKey }: Options) => {
 
   return data;
 };
+
+export const getProduct = async (id: number) => {
+  const { data } = await productsApi.get<Product>(`/products/${id}`);
+
+  return data;
+};

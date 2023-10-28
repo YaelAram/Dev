@@ -4,19 +4,50 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serial Port</title>
+    <title>Puerto Serial</title>
   </head>
   <body>
+    <h1>Puerto Serial</h1>
     <main>
-      <h1>Test</h1>
-      <section>
-        <p>Port: <span></span></p>
-        <button type="button" id="connect">Connect</button>
-        <button type="button" id="disconnect" disabled>Disconnect</button>
+      <section class="rounded shadow small">
+        <p class="port-status">
+          Estado del Puerto: <strong>Desconectado</strong>
+        </p>
+        <div class="btn-div">
+          <button type="button" id="connect" class="rounded">Conectar</button>
+          <button type="button" id="disconnect" disabled class="rounded">
+            Desconectar
+          </button>
+        </div>
       </section>
-      <section>
-        <h2>Console:</h2>
-        <ul></ul>
+      <section class="rounded shadow small">
+        <h3>Escritura de Datos</h3>
+        <form>
+          <input
+            type="text"
+            name="data"
+            class="rounded"
+            placeholder="Encender, Apagar"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="rounded" id="send" disabled>
+            Enviar
+          </button>
+        </form>
+      </section>
+      <section class="rounded shadow wide">
+        <h3>Lectura de Datos</h3>
+        <article class="rounded">
+          <p class="console-line">Mensaje 1</p>
+          <p class="console-line">Mensaje 2</p>
+          <p class="console-line">Mensaje 3</p>
+          <p class="console-line">Mensaje 4</p>
+          <p class="console-line">Mensaje 5</p>
+          <p class="console-line">Mensaje 6</p>
+          <p class="console-line">Mensaje 7</p>
+          <p class="console-line">Mensaje 8</p>
+        </article>
       </section>
     </main>
     <script type="module" src="/main.js"></script>
