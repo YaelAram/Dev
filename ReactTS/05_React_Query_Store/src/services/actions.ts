@@ -21,3 +21,17 @@ export const getProduct = async (id: number) => {
 
   return data;
 };
+
+interface ProductLike {
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+}
+
+export const createProduct = async (product: ProductLike) => {
+  const { data } = await productsApi.post<Product>("/products", product);
+
+  return data;
+};

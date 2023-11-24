@@ -1,0 +1,10 @@
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\bin\Debug\ProyectoControl.exe.config
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\bin\Debug\ProyectoControl.exe
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\bin\Debug\ProyectoControl.pdb
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.csproj.AssemblyReference.cache
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.Form1.resources
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.Properties.Resources.resources
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.csproj.GenerateResource.cache
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.csproj.CoreCompileInputs.cache
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.exe
+C:\Users\yaela\Dev\C#\ProyectoControl\ProyectoControl\obj\Debug\ProyectoControl.pdb

@@ -12,3 +12,4 @@ C:\Users\yaela\Dev\C#\TiposDatos\TiposDatos\obj\Debug\net6.0\refint\TiposDatos.d
 C:\Users\yaela\Dev\C#\TiposDatos\TiposDatos\obj\Debug\net6.0\TiposDatos.pdb
 C:\Users\yaela\Dev\C#\TiposDatos\TiposDatos\obj\Debug\net6.0\TiposDatos.genruntimeconfig.cache
 C:\Users\yaela\Dev\C#\TiposDatos\TiposDatos\obj\Debug\net6.0\ref\TiposDatos.dll
+C:\Users\yaela\Dev\C#\TiposDatos\TiposDatos\obj\Debug\net6.0\TiposDatos.sourcelink.json

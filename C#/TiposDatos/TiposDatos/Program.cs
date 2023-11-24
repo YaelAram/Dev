@@ -1,4 +1,6 @@
-﻿namespace TiposDatos
+﻿using System.Text.RegularExpressions;
+
+namespace TiposDatos
 {
     class Program
     {
@@ -130,6 +132,17 @@
             persona.Altura = 300;
             Console.WriteLine(persona.Saludar());
             Console.WriteLine($"Nombre: {persona.Nombre}");
+
+            // Expresiones Regulares
+            Regex regex = new(@"^(A|M),(100|[0-9]{1,2})$");
+
+            for (int index = 0; index <= 100; index++)
+            {
+                string auto = $"???A,{index}????";
+                string manual = $"M,{index}";
+
+                Console.WriteLine($"{auto}: {regex.IsMatch(auto)} - {manual}: {regex.IsMatch(manual)}");
+            }
         }
     }
 }
