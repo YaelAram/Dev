@@ -2,15 +2,20 @@
   "name": "test_just",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsc && node ./dist/app.js",
+    "start": "node ./dist/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dayjs": "^1.11.9",
+    "inquirer": "^8.0.0",
     "just-cartesian-product": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
   }
 }

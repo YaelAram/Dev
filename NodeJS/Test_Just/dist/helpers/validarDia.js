@@ -4,9 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validarHorarios = void 0;
-const isBetween_1 = __importDefault(require("dayjs/plugin/isBetween"));
 const dayjs_1 = __importDefault(require("dayjs"));
-const clase_1 = require("../interfaces/clase");
+const isBetween_1 = __importDefault(require("dayjs/plugin/isBetween"));
+const types_1 = require("../interfaces/types");
+const obtenerPromedio_1 = require("./obtenerPromedio");
 dayjs_1.default.extend(isBetween_1.default);
 const esValido = (c1, c2) => {
     return (c1.inicio.isBetween(c2.inicio, c2.fin, null, "()") ||
@@ -22,18 +23,20 @@ const validarDia = (dia) => {
                 return false;
     return true;
 };
-const validarHorarios = (horarios) => {
+const validarHorarios = (horarios, calificacionMinima) => {
     return horarios.filter((horario) => {
-        const clasesLunes = horario.filter((clase) => clase.dias.includes(clase_1.Dias.LUNES));
-        const clasesMartes = horario.filter((clase) => clase.dias.includes(clase_1.Dias.MARTES));
-        const clasesMiercoles = horario.filter((clase) => clase.dias.includes(clase_1.Dias.MIERCOLES));
-        const clasesJueves = horario.filter((clase) => clase.dias.includes(clase_1.Dias.JUEVES));
-        const clasesViernes = horario.filter((clase) => clase.dias.includes(clase_1.Dias.VIERNES));
+        const clasesLunes = horario.filter((clase) => clase.dias.includes(types_1.Dias.LUNES));
+        const clasesMartes = horario.filter((clase) => clase.dias.includes(types_1.Dias.MARTES));
+        const clasesMiercoles = horario.filter((clase) => clase.dias.includes(types_1.Dias.MIERCOLES));
+        const clasesJueves = horario.filter((clase) => clase.dias.includes(types_1.Dias.JUEVES));
+        const clasesViernes = horario.filter((clase) => clase.dias.includes(types_1.Dias.VIERNES));
         return (validarDia(clasesLunes) &&
             validarDia(clasesMartes) &&
             validarDia(clasesMiercoles) &&
             validarDia(clasesJueves) &&
-            validarDia(clasesViernes));
+            validarDia(clasesViernes) &&
+            (0, obtenerPromedio_1.obtenerPromedio)(horario.map((clase) => clase.calificacion)) >=
+                calificacionMinima);
     });
 };
 exports.validarHorarios = validarHorarios;

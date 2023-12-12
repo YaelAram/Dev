@@ -1,9 +1,28 @@
-import { Clase, Dias } from "../interfaces/clase";
+import { Clase, Dias } from "../interfaces/types";
+import { obtenerPromedio } from "./obtenerPromedio";
+
+const formato = new Intl.NumberFormat("es-MX", { maximumFractionDigits: 3 });
+
+const formatearPromedio = (horario: any[]) => {
+  return formato.format(
+    obtenerPromedio(horario.map((clase) => clase.calificacion))
+  );
+};
 
 export const mostrarHorarios = (horarios: Clase[][]): void => {
   let resultados = horarios.map((horario) => {
     return horario.map(
-      ({ nombre, profesor, salon, grupo, inicio, fin, dias, cupo }) => {
+      ({
+        nombre,
+        profesor,
+        salon,
+        grupo,
+        inicio,
+        fin,
+        dias,
+        cupo,
+        calificacion,
+      }) => {
         return {
           nombre,
           profesor,
@@ -16,6 +35,7 @@ export const mostrarHorarios = (horarios: Clase[][]): void => {
               ? "2-dias"
               : "3-dias",
           cupo,
+          calificacion,
         };
       }
     );
@@ -35,8 +55,17 @@ export const mostrarHorarios = (horarios: Clase[][]): void => {
     return (horario = [...lunMieVie, ...marJue]);
   });
 
+  resultados.sort((horario1, horario2) => {
+    return (
+      obtenerPromedio(horario2.map((clase) => clase.calificacion)) -
+      obtenerPromedio(horario1.map((clase) => clase.calificacion))
+    );
+  });
+
   resultados.forEach((horario, index) => {
-    console.log(`\nHorario ${index + 1}\n`);
+    const promedio = formatearPromedio(horario);
+
+    console.log(`\nHorario ${index + 1}\nCalificacion: ${promedio}`);
     console.table(horario, [
       "nombre",
       "profesor",

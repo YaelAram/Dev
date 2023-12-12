@@ -8,7 +8,7 @@ var Dias;
     Dias["MIERCOLES"] = "Mier";
     Dias["JUEVES"] = "Jue";
     Dias["VIERNES"] = "Vie";
-})(Dias = exports.Dias || (exports.Dias = {}));
+})(Dias || (exports.Dias = Dias = {}));
 exports.LunMieVie = [Dias.LUNES, Dias.MIERCOLES, Dias.VIERNES];
 exports.LunMie = [Dias.LUNES, Dias.MIERCOLES];
 exports.MarJue = [Dias.MARTES, Dias.JUEVES];

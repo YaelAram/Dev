@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.clases = void 0;
-const objectSupport_1 = __importDefault(require("dayjs/plugin/objectSupport"));
 const dayjs_1 = __importDefault(require("dayjs"));
-const clase_1 = require("../interfaces/clase");
+const objectSupport_1 = __importDefault(require("dayjs/plugin/objectSupport"));
+const types_1 = require("../interfaces/types");
 dayjs_1.default.extend(objectSupport_1.default);
 const sistemasInformacion = [
     {
@@ -17,7 +17,8 @@ const sistemasInformacion = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 13, minutes: 0 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 15, minutes: 0 }),
         cupo: 60,
-        dias: clase_1.MarJue,
+        dias: types_1.MarJue,
+        calificacion: 0,
     },
 ];
 const programacionWeb = [
@@ -29,7 +30,8 @@ const programacionWeb = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 15, minutes: 0 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 17, minutes: 0 }),
         cupo: 60,
-        dias: clase_1.MarJue,
+        dias: types_1.MarJue,
+        calificacion: 0,
     },
 ];
 const redesComputadoras = [
@@ -41,7 +43,8 @@ const redesComputadoras = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 17, minutes: 0 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 19, minutes: 0 }),
         cupo: 40,
-        dias: clase_1.MarJue,
+        dias: types_1.MarJue,
+        calificacion: 0,
     },
 ];
 const microcontroladores = [
@@ -53,7 +56,8 @@ const microcontroladores = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 15, minutes: 0 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 17, minutes: 0 }),
         cupo: 30,
-        dias: clase_1.LunMie,
+        dias: types_1.LunMie,
+        calificacion: 0,
     },
 ];
 const optativas = [
@@ -65,7 +69,8 @@ const optativas = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 12, minutes: 40 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 14, minutes: 0 }),
         cupo: 26,
-        dias: clase_1.LunMieVie,
+        dias: types_1.LunMieVie,
+        calificacion: 0,
     },
     // {
     //   nombre: "Sistemas Multiusuario",
@@ -87,7 +92,8 @@ const laboratoriosMicros = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 11, minutes: 0 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, day: 20, hours: 13, minutes: 0 }),
         cupo: 25,
-        dias: clase_1.Jueves,
+        dias: types_1.Jueves,
+        calificacion: 0,
     },
     // {
     //   nombre: "Laboratorio Micros",
@@ -129,7 +135,8 @@ const laboratoriosRedes = [
         inicio: (0, dayjs_1.default)({ years: 2024, months: 7, days: 20, hours: 18, minutes: 30 }),
         fin: (0, dayjs_1.default)({ years: 2024, months: 7, days: 20, hours: 20, minutes: 0 }),
         cupo: 30,
-        dias: clase_1.Lunes,
+        dias: types_1.Lunes,
+        calificacion: 0,
     },
 ];
 exports.clases = [

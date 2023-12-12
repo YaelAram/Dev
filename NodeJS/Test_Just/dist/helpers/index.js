@@ -14,6 +14,8 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./crearHora"), exports);
+__exportStar(require("./crearTituloOpcion"), exports);
 __exportStar(require("./mostrarHorarios"), exports);
+__exportStar(require("./obtenerPromedio"), exports);
+__exportStar(require("./ordenarMaterias"), exports);
 __exportStar(require("./validarDia"), exports);
